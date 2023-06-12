@@ -1,10 +1,17 @@
-$(function () {
-    /*Mneu nav toggle*/
-    $('.menu-btn').on("click", function (event) {
-        event.preventDefault();
+const menuBTN = document.querySelector('.menu-btn');
+const menU = document.querySelector('.menu');
+const arroW = document.querySelector('.arrow');
 
-        $('.arrow').toggleClass("active");
-        $('.menu').toggleClass("active");
+menuBTN.addEventListener('click', (e) => {
+    menU.classList.toggle('active');
+    arroW.classList.toggle('active');
+})
 
-    });
-});
+document.addEventListener('click', (e) => {
+    const click = e.composedPath().includes(menuBTN);
+
+    if (!click) {
+        menU.classList.remove('active');
+        arroW.classList.remove('active'); 
+    }
+})
