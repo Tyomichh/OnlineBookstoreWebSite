@@ -66,6 +66,10 @@ body {
     &-book_author_name {
         margin: 50px 0;
     }
+
+    &-lowergeneral {
+        margin-bottom: 70px;
+    }
 }
 
 .tag_by_id {
@@ -134,6 +138,15 @@ body {
     }
 
 }
+
+.info{
+    &-about_us_gr{
+        display: grid;
+        grid-template-columns: 1.3fr 0.9fr 1fr 1fr 1.2fr;
+        grid-column-gap: 30px; 
+        text-align: center;
+    }
+} 
 
 // ------------------------------------------------------------------------------TEXT STYLES------------------------------------------------------------------------------
 
@@ -334,6 +347,7 @@ body {
         height: 675px;
         padding: 48px;
         border: 1px solid $TransparentGrey;
+        background-color: $WhiteCol;
         transition: transform 0.2s linear;
 
         &:hover {

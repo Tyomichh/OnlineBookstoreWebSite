@@ -44,6 +44,9 @@ body {
 .spasing-book_author_name {
   margin: 50px 0;
 }
+.spasing-lowergeneral {
+  margin-bottom: 70px;
+}
 
 .tag_by_id {
   position: absolute;
@@ -92,6 +95,13 @@ body {
   position: absolute;
   bottom: 0;
   right: 0;
+}
+
+.info-about_us_gr {
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr 1fr 1fr 1.2fr;
+  grid-column-gap: 30px;
+  text-align: center;
 }
 
 .montserat, .montserat-SemiBold_black, .montserat-SemiBold_green, .montserat-SemiBold_black_main_title, .montserat-Regular_black_title, .montserat-Regular_green_small, .montserat-Regular_black, .montserat-Regular_green {
@@ -242,6 +252,7 @@ body {
   height: 675px;
   padding: 48px;
   border: 1px solid rgba(116, 116, 116, 0.3);
+  background-color: #EFEFEC;
   transition: transform 0.2s linear;
 }
 .product-container:hover {
