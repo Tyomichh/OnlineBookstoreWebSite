@@ -17,22 +17,22 @@
 <body>
 
     <div class="page">
-
+        <!-- HEADER -->
         <header>
 
             <div class="container-bigger">
 
                 <nav class="nav">
                     
-                    <button class="menu-btn">
+                    <button class="menu-burger">
 
                         <span></span>
                         <div class="arrow"></div>
-                        <ul class="menu montserat-Regular_black">
-                            <li class="list"><a class="link" href="#" data-scroll="#pricing">New</a></li>
-                            <li class="list"><a class="link" href="#" data-scroll="#contact">About us</a></li>
-                            <li class="list"><a class="link" href="#" data-scroll="#NFTs">Catalog</a></li>
-                            <li class="list"><a class="link" href="#" data-scroll="#reviwes">Sale</a></li>
+                        <ul class="menu-list montserat-Regular_black">
+                            <li class="listst"><a class="link" href="#" data-scroll="#NEW">New</a></li>
+                            <li class="listst"><a class="link" href="#" data-scroll="#contact">About us</a></li>
+                            <li class="listst"><a class="link" href="#" data-scroll="#CATALOG">Catalog</a></li>
+                            <li class="listst"><a class="link" href="#" data-scroll="#reviwes">Sale</a></li>
                         </ul>
 
                     </button>
@@ -44,7 +44,7 @@
                     </a>
 
                     <a class="basket" href="">
-                        <img class="img" src="Images/SVG_Icons/Cart.svg" alt="basket">
+                        <img class="img-basket" src="Images/SVG_Icons/Cart.svg" alt="basket">
                     </a>
                     
                 </nav>
@@ -52,25 +52,108 @@
             </div>
 
         </header>
+        
+        <!-- SECTION 1 -->
+        <section class="spasing-general relative">
 
-        <section>
-
-            <div class = "container-bigger relative">
                 <img class = "img-books_branch" src="Images/Store_images/Books_Barnch.png" alt="">
 
                 <div class="container-first_section relative">
                     <p class="montserat-Regular_green paragraf-rotate2023">2023</p>
-                    <h1 class="montserat-SemiBold_black_title title-place">your aesthetic bookstore</h1>
+                    <h1 class="montserat-SemiBold_black_main_title title-place">your aesthetic bookstore</h1>
                     <p class="inter-Light_black paragraf-bottom_place">How many a man has dated a new era in his life from the reading <br> .of a book <br><br><span class="inter-SemiBold_black">Henry David Thoreau</span></p>
                 
                 </div>
-            </div>
 
         </section>
 
+        <!-- SECTION 2 -->
+        <section class="spasing-general">
+
+            <div class="container ">
+
+                    <h2 class="montserat-Regular_black_title spasing-general" id="NEW">new</h2>
+
+                    <div class="product-columns">
+
+                        <div class="product-container relative">
+
+                            <div class="relative">
+                                <img class="img-sail_books" src="Images/Store_images/Reckoning_Book.png" alt="" id="non-fiction">
+                                <span class="montserat-Regular_green_small tag_by_id" id="non-fiction">non-fiction</span>
+                            </div>
+
+                            <div class="spasing-book_author_name">
+                                <p class="montserat-Regular_black">Reckoning</p>
+                                <p class="montserat-SemiBold_black">Eve Ensler</p>
+                            </div>
+
+                            <div class="price_blok">
+                                
+                                <p class="montserat-SemiBold_green">24$</p>
+
+                                <button class="btn-add_to_cart">
+
+                                    <img src="Images/SVG_Icons/Cart.svg" alt="">
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                        <div class="product-container">
+
+                            <div class="relative">
+                                <img class="img-sail_books" src="Images/Store_images/BoysComeFirst_Book.png" alt="" id="non-fiction">
+                                <span class="montserat-Regular_green_small tag_by_id" id="fiction">fiction</span>
+                            </div>
+                            
+
+                            <div class="spasing-book_author_name">
+                                <p class="montserat-Regular_black">Boys Come First</p>
+                                <p class="montserat-SemiBold_black">Aaron Foley</p>
+                            </div>
+
+                            <div class="price_blok">
+                                
+                                <p class="montserat-SemiBold_green">32$</p>
+
+                                <button class="btn-add_to_cart">
+
+                                    <img src="Images/SVG_Icons/Cart.svg" alt="">
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                        <button class="product-container btn-cont" onclick="document.location='#CATALOG'">
+
+                            <div class="relative shopAll_center">
+                                <p class="montserat paragraf-shop_Allplace" style="text-transform: uppercase; display: inline;">shop all</p>
+                                <img class="img-arrow" src="Images/SVG_Icons/Arrow.svg" alt="">
+                            </div>
+                            
+
+                        </button>
+                                                 
+                    </div>
+
+            </div>
+
+        </section>      
+
     </div>
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="vanilla-tilt.js"></script>
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelector(".sddddd"), {
+            max: 100,
+            speed: 100
+        }); -->
+    </script>
     <script src="JS/main.js"></script>
 
 </body>

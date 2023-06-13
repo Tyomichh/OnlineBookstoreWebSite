@@ -1,5 +1,5 @@
-const menuBTN = document.querySelector('.menu-btn');
-const menU = document.querySelector('.menu');
+const menuBTN = document.querySelector('.menu-burger');
+const menU = document.querySelector('.menu-list');
 const arroW = document.querySelector('.arrow');
 
 menuBTN.addEventListener('click', (e) => {

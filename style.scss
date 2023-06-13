@@ -29,6 +29,7 @@ body {
  
 .page {
     max-width: 1440px;
+    width: 1440px;
     display: block;
     margin: 0 auto;
 }
@@ -50,8 +51,89 @@ body {
         height: 900px;
         @extend .container;
     }
+
+    &-second_section {
+        height: 836px;
+        @extend .container;
+    }
 }
 
+.spasing {
+    &-general {
+        margin-bottom: 100px;
+    }
+
+    &-book_author_name {
+        margin: 50px 0;
+    }
+}
+
+.tag_by_id {
+    position: absolute;
+    bottom: 1%;
+    writing-mode: vertical-lr;
+    rotate: (180deg);
+
+}
+
+.btn {
+    &-add_to_cart {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &-cont {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.img {
+    &-basket {
+        width: 32px;
+        height: 36px;
+    }
+
+    &-books_branch {
+        height: 900px;
+        position: absolute;
+    }
+
+    &-sail_books {
+        width: 272px;
+        height: 377px;
+    }
+
+    &-arrow {
+        top: -26px;
+        right: -10px;
+        position: absolute;
+    }
+}
+
+.paragraf {
+    
+    &-rotate2023{
+        width: 74px;
+        position: absolute;
+        top: 6%;
+        left: 43%;
+        transform: translate(-93%, -57%);
+        writing-mode: vertical-lr;
+        rotate: (180deg);
+    }
+
+    &-bottom_place {
+        width: 360px;
+        direction: rtl;
+        position: absolute;
+        bottom:  0;
+        right: 0;
+    }
+
+}
 
 // ------------------------------------------------------------------------------TEXT STYLES------------------------------------------------------------------------------
 
@@ -59,24 +141,48 @@ body {
 .montserat {
     font-family: 'Montserrat', sans-serif;
     font-size: 30px;
+    font-weight: 400;
     color: $black;
 
     &-Regular_green {
         @extend .montserat;
-        font-weight: 400;
         color: $LeafyGreen;
-    }
-
-    &-SemiBold_black_title {
-        @extend .montserat;
-        font-size: 90px;
-        font-weight: 600;
     }
 
     &-Regular_black {
         @extend .montserat;
         font-size: 25px;
-        font-weight: 400;
+    }
+
+    &-Regular_green_small {
+        @extend .montserat;
+        font-size: 18px;
+        color: $LeafyGreen;
+    }
+
+    &-Regular_black_title {
+        @extend .montserat;
+        font-size: 50px;
+        text-transform: uppercase;
+    }
+
+    &-SemiBold_black_main_title {
+        @extend .montserat;
+        font-size: 90px;
+        font-weight: 600;
+    }
+
+    &-SemiBold_green {
+        @extend .montserat;
+        font-size: 25px;
+        font-weight: 600;
+        color: $LeafyGreen;
+    }
+
+    &-SemiBold_black {
+        @extend .montserat;
+        font-size: 25px;
+        font-weight: 600;
     }
 }
 
@@ -97,28 +203,6 @@ body {
     }
 }
 // transition: background-size .2s linear;
-.paragraf {
-    
-    &-rotate2023{
-        width: 74px;
-        position: absolute;
-        top: 6%;
-        left: 43%;
-        transform: translate(-93%, -57%);
-        writing-mode: vertical-lr;
-        rotate: (180deg);
-    }
-
-    &-bottom_place {
-        width: 360px;
-        direction: rtl;
-        position: absolute;
-        bottom:  0;
-        right: 0;
-    }
-    
-}
-
 .title {
     
     &-place {
@@ -142,69 +226,69 @@ body {
     align-items: center;
 }
 
-.menu-btn {
-    width: 30px;
-    height: 21px;
-    position: relative;
-
-    &:hover {
-        cursor: pointer;
-    }
-
-    span {
-        width: 100%;
-        height: 3px;
-        display: block;
+.menu{
+    &-burger {
+        width: 30px;
+        height: 21px;
         position: relative;
-        background-color: $black;
-
-        &::before, &::after {
-            content: "";
-            width: 100%;
-            height: 3px;
-            position: absolute;
-            left: 0;
-            background-color: $black;
-        }
-
-        &::after {
-            bottom: 9px;
-        }
-
-        &::before {
-            top: 9px;
-        }
-    }
-}
-
-.menu {
-    width: 350px;
-    display: none;
-    position: absolute;
-    top: 46px;
-    flex-direction: column;
-    border: 2px solid $black;
-    backdrop-filter: blur(5px);
-    z-index: 1;
-    transition: backdrop-filter .2s linear;
-
-    &.active {
-        display: flex;
-    }
-
-    .list {
-        padding: 8px 0;
-        list-style-type: none;
 
         &:hover {
-            background-color: $LightGrey;
-            color: $WhiteCol;
-            transition: background-color .3s linear;
+            cursor: pointer;
         }
 
-        .link {
-            text-decoration: none;
-            color: $black;
+        span {
+            width: 100%;
+            height: 3px;
+            display: block;
+            position: relative;
+            background-color: $black;
+
+            &::before, &::after {
+                content: "";
+                width: 100%;
+                height: 3px;
+                position: absolute;
+                left: 0;
+                background-color: $black;
+            }
+
+            &::after {
+                bottom: 9px;
+            }
+
+            &::before {
+                top: 9px;
+            }
+        }
+    }
+
+    &-list{
+        width: 300px;
+        display: none;
+        position: absolute;
+        top: 46px;
+        flex-direction: column;
+        backdrop-filter: blur(5px);
+        border: 2px solid $black;
+        z-index: 1;
+
+        &.active {
+            display: flex;
+        }
+
+        .listst {
+            padding: 8px 0;
+            list-style-type: none;
+
+            &:hover {
+                background-color: $LightGrey;
+                transition: background-color .3s linear;
+            }
+
+            .link {
+                text-decoration: none;
+                color: $black;
+            }
         }
     }
 }
@@ -230,18 +314,44 @@ body {
 
 .basket {
 
-    .img {
-        width: 32px;
-        height: 36px;
-    }
-
 }
 
 
-// ------------------------------------------------------------------------------SECTION 1------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------SECTION 2------------------------------------------------------------------------------
 
 
-.img-books_branch {
-    height: 900px;
-    position: absolute;
+.product {
+
+    &-columns{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 30px; 
+    }
+
+    &-container{
+        max-width: 390px;
+        width: 100%;
+        height: 675px;
+        padding: 48px;
+        border: 1px solid $TransparentGrey;
+        transition: transform 0.2s linear;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+    }
+}
+
+.price_blok {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 175px;
+    align-items: end;
+}
+
+.shopAll_center {
+    width: 163px;  
+    left: 50%;
+    transform: translate(-50%);
 }

@@ -15,6 +15,7 @@ body {
 
 .page {
   max-width: 1440px;
+  width: 1440px;
   display: block;
   margin: 0 auto;
 }
@@ -23,7 +24,7 @@ body {
   position: relative;
 }
 
-.container, .container-first_section, .container-bigger {
+.container, .container-second_section, .container-first_section, .container-bigger {
   max-width: 1170px;
   margin: 0 auto;
 }
@@ -33,36 +34,47 @@ body {
 .container-first_section {
   height: 900px;
 }
-
-.montserat, .montserat-Regular_black, .montserat-SemiBold_black_title, .montserat-Regular_green {
-  font-family: "Montserrat", sans-serif;
-  font-size: 30px;
-  color: #202020;
-}
-.montserat-Regular_green {
-  font-weight: 400;
-  color: #4D6649;
-}
-.montserat-SemiBold_black_title {
-  font-size: 90px;
-  font-weight: 600;
-}
-.montserat-Regular_black {
-  font-size: 25px;
-  font-weight: 400;
+.container-second_section {
+  height: 836px;
 }
 
-.inter, .inter-SemiBold_black, .inter-Light_black {
-  font-family: "Inter", sans-serif;
-  font-size: 30px;
-  text-orientation: sideways;
-  color: #202020;
+.spasing-general {
+  margin-bottom: 100px;
 }
-.inter-Light_black {
-  font-weight: 300;
+.spasing-book_author_name {
+  margin: 50px 0;
 }
-.inter-SemiBold_black {
-  font-weight: 600;
+
+.tag_by_id {
+  position: absolute;
+  bottom: 1%;
+  writing-mode: vertical-lr;
+  rotate: 180deg;
+}
+
+.btn-add_to_cart:hover {
+  cursor: pointer;
+}
+.btn-cont:hover {
+  cursor: pointer;
+}
+
+.img-basket {
+  width: 32px;
+  height: 36px;
+}
+.img-books_branch {
+  height: 900px;
+  position: absolute;
+}
+.img-sail_books {
+  width: 272px;
+  height: 377px;
+}
+.img-arrow {
+  top: -26px;
+  right: -10px;
+  position: absolute;
 }
 
 .paragraf-rotate2023 {
@@ -82,6 +94,53 @@ body {
   right: 0;
 }
 
+.montserat, .montserat-SemiBold_black, .montserat-SemiBold_green, .montserat-SemiBold_black_main_title, .montserat-Regular_black_title, .montserat-Regular_green_small, .montserat-Regular_black, .montserat-Regular_green {
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  color: #202020;
+}
+.montserat-Regular_green {
+  color: #4D6649;
+}
+.montserat-Regular_black {
+  font-size: 25px;
+}
+.montserat-Regular_green_small {
+  font-size: 18px;
+  color: #4D6649;
+}
+.montserat-Regular_black_title {
+  font-size: 50px;
+  text-transform: uppercase;
+}
+.montserat-SemiBold_black_main_title {
+  font-size: 90px;
+  font-weight: 600;
+}
+.montserat-SemiBold_green {
+  font-size: 25px;
+  font-weight: 600;
+  color: #4D6649;
+}
+.montserat-SemiBold_black {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.inter, .inter-SemiBold_black, .inter-Light_black {
+  font-family: "Inter", sans-serif;
+  font-size: 30px;
+  text-orientation: sideways;
+  color: #202020;
+}
+.inter-Light_black {
+  font-weight: 300;
+}
+.inter-SemiBold_black {
+  font-weight: 600;
+}
+
 .title-place {
   width: 600px;
   text-transform: uppercase;
@@ -98,22 +157,22 @@ body {
   align-items: center;
 }
 
-.menu-btn {
+.menu-burger {
   width: 30px;
   height: 21px;
   position: relative;
 }
-.menu-btn:hover {
+.menu-burger:hover {
   cursor: pointer;
 }
-.menu-btn span {
+.menu-burger span {
   width: 100%;
   height: 3px;
   display: block;
   position: relative;
   background-color: #202020;
 }
-.menu-btn span::before, .menu-btn span::after {
+.menu-burger span::before, .menu-burger span::after {
   content: "";
   width: 100%;
   height: 3px;
@@ -121,40 +180,35 @@ body {
   left: 0;
   background-color: #202020;
 }
-.menu-btn span::after {
+.menu-burger span::after {
   bottom: 9px;
 }
-.menu-btn span::before {
+.menu-burger span::before {
   top: 9px;
 }
-
-.menu {
-  width: 350px;
+.menu-list {
+  width: 300px;
   display: none;
   position: absolute;
   top: 46px;
   flex-direction: column;
-  border: 2px solid #202020;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
+  border: 2px solid #202020;
   z-index: 1;
-  transition: -webkit-backdrop-filter 0.2s linear;
-  transition: backdrop-filter 0.2s linear;
-  transition: backdrop-filter 0.2s linear, -webkit-backdrop-filter 0.2s linear;
 }
-.menu.active {
+.menu-list.active {
   display: flex;
 }
-.menu .list {
+.menu-list .listst {
   padding: 8px 0;
   list-style-type: none;
 }
-.menu .list:hover {
+.menu-list .listst:hover {
   background-color: #d7d7d7;
-  color: #EFEFEC;
   transition: background-color 0.3s linear;
 }
-.menu .list .link {
+.menu-list .listst .link {
   text-decoration: none;
   color: #202020;
 }
@@ -177,12 +231,32 @@ body {
   height: 38px;
 }
 
-.basket .img {
-  width: 32px;
-  height: 36px;
+.product-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 30px;
+}
+.product-container {
+  max-width: 390px;
+  width: 100%;
+  height: 675px;
+  padding: 48px;
+  border: 1px solid rgba(116, 116, 116, 0.3);
+  transition: transform 0.2s linear;
+}
+.product-container:hover {
+  transform: scale(1.05);
 }
 
-.img-books_branch {
-  height: 900px;
-  position: absolute;
+.price_blok {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 175px;
+  align-items: end;
+}
+
+.shopAll_center {
+  width: 163px;
+  left: 50%;
+  transform: translate(-50%);
 }/*# sourceMappingURL=style.css.map */
