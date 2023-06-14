@@ -42,7 +42,7 @@ body {
   margin-bottom: 100px;
 }
 .spasing-book_author_name {
-  margin: 50px 0;
+  margin: 48px 0;
 }
 .spasing-lowergeneral {
   margin-bottom: 70px;
@@ -58,7 +58,11 @@ body {
 .btn-add_to_cart:hover {
   cursor: pointer;
 }
-.btn-cont:hover {
+.btn-container {
+  display: flex;
+  align-items: center;
+}
+.btn-container:hover {
   cursor: pointer;
 }
 
@@ -71,8 +75,8 @@ body {
   position: absolute;
 }
 .img-sail_books {
-  width: 272px;
-  height: 377px;
+  max-width: 272px;
+  width: 100%;
 }
 .img-arrow {
   top: -26px;
@@ -95,6 +99,12 @@ body {
   position: absolute;
   bottom: 0;
   right: 0;
+}
+.paragraf-shopAll {
+  max-width: 272px;
+  width: 100%;
+  display: block;
+  text-transform: uppercase;
 }
 
 .info-about_us_gr {
@@ -167,10 +177,12 @@ body {
   align-items: center;
 }
 
+.menu-wrapper {
+  position: relative;
+}
 .menu-burger {
   width: 30px;
   height: 21px;
-  position: relative;
 }
 .menu-burger:hover {
   cursor: pointer;
@@ -197,44 +209,42 @@ body {
   top: 9px;
 }
 .menu-list {
-  width: 300px;
-  display: none;
-  position: absolute;
-  top: 46px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 300vh;
+  display: block;
+  transition: 0.5s;
   flex-direction: column;
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
-  border: 2px solid #202020;
+  border-right: 2px solid #202020;
+  background-color: rgba(77, 102, 73, 0.04);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  transform: translateX(-100%);
   z-index: 1;
 }
 .menu-list.active {
-  display: flex;
+  transform: translateX(0);
 }
 .menu-list .listst {
+  width: 100%;
   padding: 8px 0;
+  text-align: center;
   list-style-type: none;
+}
+.menu-list .listst:nth-child(1) {
+  margin-top: 400px;
 }
 .menu-list .listst:hover {
   background-color: #d7d7d7;
-  transition: background-color 0.3s linear;
+  transition: background-color 0.2s linear;
 }
 .menu-list .listst .link {
+  width: 100%;
+  display: block;
   text-decoration: none;
   color: #202020;
-}
-
-.arrow {
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-bottom: 8px solid #202020;
-  position: absolute;
-  left: 7px;
-  top: 38px;
-  display: none;
-  z-index: 1;
-}
-.arrow.active {
-  display: flex;
 }
 
 .logo {

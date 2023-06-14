@@ -24,21 +24,24 @@
 
                 <nav class="nav">
                     
-                    <button class="menu-burger">
+                    <div class="menu-wrapper">
+                        <button class="menu-burger">
+                            <span></span>
+                        </button>
 
-                        <span></span>
-                        <div class="arrow"></div>
-                        <ul class="menu-list montserat-Regular_black">
-                            <li class="listst"><a class="link" href="#" data-scroll="#NEW">New</a></li>
-                            <li class="listst"><a class="link" href="#" data-scroll="#ABOUTUS">About us</a></li>
-                            <li class="listst"><a class="link" href="#" data-scroll="#CATALOG">Catalog</a></li>
-                            <li class="listst"><a class="link" href="#" data-scroll="#reviwes">Sale</a></li>
-                        </ul>
+                        <nav class="menu-list montserat">
+                            <!-- <input type="text"> -->
 
-                    </button>
+                            <ul>
+                                <li class="listst"><a class="link" href="#" data-scroll="#NEW">New</a></li>
+                                <li class="listst"><a class="link" href="#" data-scroll="#ABOUTUS">About us</a></li>
+                                <li class="listst"><a class="link" href="#" data-scroll="#CATALOG">Catalog</a></li>
+                                <li class="listst"><a class="link" href="#" data-scroll="#reviwes">Sale</a></li>
+                            </ul>
+                            
+                        </nav>
+                    </div>
 
-                    
-                                                                                                
                     <a class="logo" href="">
                         <img class="img" src="Images/SVG_Icons/Logo.svg" alt="logo">
                     </a>
@@ -129,15 +132,15 @@
 
                         </div>
 
-                        <button class="product-container btn-cont" onclick="document.location='#CATALOG'">
+                        <div class="product-container btn-container" onclick="document.location='#CATALOG'">
 
                             <div class="relative shopAll_center">
-                                <p class="montserat paragraf-shop_Allplace" style="text-transform: uppercase; display: inline;">shop all</p>
+                                <p class="montserat paragraf-shopAll">shop all</p>
                                 <img class="img-arrow" src="Images/SVG_Icons/Arrow.svg" alt="">
                             </div>
                             
 
-                        </button>
+                        </div>
                                                  
                     </div>
 
@@ -162,6 +165,16 @@
 
                 </div>
             
+            </div>
+
+        </section>
+
+        <section class="spasing-general">
+
+            <div class="container">
+
+                <h2 class="montserat-Regular_black_title spasing-general" id="CATALOG">Catalog</h2>
+
             </div>
 
         </section>
