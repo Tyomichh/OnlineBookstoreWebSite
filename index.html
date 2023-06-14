@@ -18,25 +18,30 @@
 
     <div class="page">
         <!-- HEADER -->
-        <header>
+        <header class="header">
 
             <div class="container-bigger">
 
                 <nav class="nav">
                     
-                    <div class="menu-wrapper">
+                    <div class="menu">
                         <button class="menu-burger">
                             <span></span>
                         </button>
 
-                        <nav class="menu-list montserat">
-                            <!-- <input type="text"> -->
+                        <nav class="menu-wrapper">
 
-                            <ul>
-                                <li class="listst"><a class="link" href="#" data-scroll="#NEW">New</a></li>
-                                <li class="listst"><a class="link" href="#" data-scroll="#ABOUTUS">About us</a></li>
-                                <li class="listst"><a class="link" href="#" data-scroll="#CATALOG">Catalog</a></li>
-                                <li class="listst"><a class="link" href="#" data-scroll="#reviwes">Sale</a></li>
+                            <!-- <div class="menu-mini_form">
+                                <label class="menu-label montserat-SemiBold_black" for="">Which book do you want?</label>
+                                <input class="menu-input" type="text" placeholder="Fiction, or maybe historical?">
+                            </div> -->
+                            
+
+                            <ul class="menu-list">
+                                <li class="menu-listst"><a class="menu-list-link" href="#" data-scroll="#NEW">New</a></li>
+                                <li class="menu-listst"><a class="menu-list-link" href="#" data-scroll="#ABOUTUS">About us</a></li>
+                                <li class="menu-listst"><a class="menu-list-link" href="#" data-scroll="#CATALOG">Catalog</a></li>
+                                <li class="menu-listst"><a class="menu-list-link" href="#" data-scroll="#reviwes">Sale</a></li>
                             </ul>
                             
                         </nav>
@@ -57,7 +62,7 @@
         </header>
         
         <!-- SECTION 1 -->
-        <section class="spasing-general relative">
+        <section class="spasing-general relative section1">
 
                 <img class = "img-books_branch" src="Images/Store_images/Books_Barnch.png" alt="">
 
@@ -79,15 +84,15 @@
 
                     <div class="product-columns">
 
-                        <div class="product-container relative">
+                        <div class="product-container">
 
                             <div class="relative">
-                                <img class="img-sail_books" src="Images/Store_images/Reckoning_Book.png" alt="" id="non-fiction">
-                                <span class="montserat-Regular_green_small tag_by_id" id="non-fiction">non-fiction</span>
+                                <img class="img-sail_books" src="Images/Store_images/Reckoning_Book.png" alt="">
+                                <span class="montserat-Regular_green_small tag_by_id" id="non-fiction_tag">non-fiction</span>
                             </div>
 
-                            <div class="spasing-book_author_name">
-                                <p class="montserat-Regular_black">Reckoning</p>
+                            <div class="spasing-book_author_name relative">
+                                <p class="montserat-Regular_black book_name">Reckoning</p>
                                 <p class="montserat-SemiBold_black">Eve Ensler</p>
                             </div>
 
@@ -97,7 +102,7 @@
 
                                 <button class="btn-add_to_cart">
 
-                                    <img src="Images/SVG_Icons/Cart.svg" alt="">
+                                    <img src="Images/SVG_Icons/Cart.svg" alt="" id="dance">
 
                                 </button>
 
@@ -108,13 +113,13 @@
                         <div class="product-container">
 
                             <div class="relative">
-                                <img class="img-sail_books" src="Images/Store_images/BoysComeFirst_Book.png" alt="" id="non-fiction">
-                                <span class="montserat-Regular_green_small tag_by_id" id="fiction">fiction</span>
+                                <img class="img-sail_books" src="Images/Store_images/BoysComeFirst_Book.png" alt="">
+                                <span class="montserat-Regular_green_small tag_by_id" id="fiction_tag">fiction</span>
                             </div>
                             
 
-                            <div class="spasing-book_author_name">
-                                <p class="montserat-Regular_black">Boys Come First</p>
+                            <div class="spasing-book_author_name relative">
+                                <p class="montserat-Regular_black book_name">Boys Come First</p>
                                 <p class="montserat-SemiBold_black">Aaron Foley</p>
                             </div>
 
@@ -124,7 +129,7 @@
 
                                 <button class="btn-add_to_cart">
 
-                                    <img src="Images/SVG_Icons/Cart.svg" alt="">
+                                    <img src="Images/SVG_Icons/Cart.svg" alt="" id="dance">
 
                                 </button>
 
@@ -132,10 +137,10 @@
 
                         </div>
 
-                        <div class="product-container btn-container" onclick="document.location='#CATALOG'">
+                        <div class="product-container btn-container" data-scroll="#CATALOG">
 
                             <div class="relative shopAll_center">
-                                <p class="montserat paragraf-shopAll">shop all</p>
+                                <p class="paragraf-shopAll">shop all</p>
                                 <img class="img-arrow" src="Images/SVG_Icons/Arrow.svg" alt="">
                             </div>
                             
@@ -158,10 +163,10 @@
                 <div class="info-about_us_gr">
                     
                     <img src="Images/SVG_Icons/Logo.svg" alt="" style="align-self: center;">
-                    <p class="montserat"><b>1000+</b> orders executed</p>
-                    <p class="montserat">we have been working for 5 years</p>
-                    <p class="montserat"><b>950+</b> satisfied clients</p>
-                    <p class="montserat">we promise that u will want to return to our bookstore</p>
+                    <p><b>1000+</b> orders executed</p>
+                    <p>we have been working for 5 years</p>
+                    <p><b>950+</b> satisfied clients</p>
+                    <p>we promise that u will want to return to our bookstore</p>
 
                 </div>
             
@@ -175,19 +180,273 @@
 
                 <h2 class="montserat-Regular_black_title spasing-general" id="CATALOG">Catalog</h2>
 
+                <div class="catalog-nav spasing-general">
+                    <button class="catalog-nav-link" href="">all</button>
+                    <button class="catalog-nav-link" href="">psychology</button>
+                    <button class="catalog-nav-link" href="">fiction</button>
+                    <button class="catalog-nav-link" href="">non-fiction</button>
+                    <button class="catalog-nav-link" href="">fantasy</button>
+                    <button class="catalog-nav-link" href="">business&finance</button>
+                    <button class="catalog-nav-link" href="">history</button>
+                </div>
+
+                <div class="product-columns">
+
+                    <div class="product-container">
+
+                        <div class="relative">
+                            <img class="img-sail_books" src="Images/Store_images/AmericanJezebel_Book.png" alt="">
+                            <span class="montserat-Regular_green_small tag_by_id" id="history_tag">history</span>
+                        </div>
+
+                        <div class="spasing-book_author_name relative">
+                            <p class="montserat-Regular_black book_name">American Jezebel</p>
+                            <p class="montserat-SemiBold_black">Eve Laplante</p>
+                        </div>
+
+                        <div class="price_blok">
+                            
+                            <p class="montserat-SemiBold_green">15$</p>
+
+                            <button class="btn-add_to_cart">
+
+                                <img src="Images/SVG_Icons/Cart.svg" alt="" id="dance">
+
+                            </button>
+
+                        </div>
+
+                    </div>
+                    
+                    <div class="product-container">
+
+                        <div class="relative">
+                            <img class="img-sail_books" src="Images/Store_images/TheValueOfEverything_Book.png" alt="">
+                            <span class="montserat-Regular_green_small tag_by_id" id="business&finance_tag">business&finance</span>
+                        </div>
+
+                        <div class="spasing-book_author_name relative">
+                            <p class="montserat-Regular_black book_name">The Value of Everything</p>
+                            <p class="montserat-SemiBold_black">Mariana Mazzucato</p>
+                        </div>
+
+                        <div class="price_blok">
+                            
+                            <p class="montserat-SemiBold_green">30$</p>
+
+                            <button class="btn-add_to_cart">
+
+                                <img src="Images/SVG_Icons/Cart.svg" alt="" id="dance">
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="product-container">
+
+                        <div class="relative">
+                            <img class="img-sail_books" src="Images/Store_images/LetsTalk_Book.png" alt="">
+                            <span class="montserat-Regular_green_small tag_by_id" id="business&finance_tag">business&finance</span>
+                        </div>
+
+                        <div class="spasing-book_author_name relative">
+                            <p class="montserat-Regular_black book_name">Let`s Talk</p>
+                            <p class="montserat-SemiBold_black">Therese Huston</p>
+                        </div>
+
+                        <div class="price_blok">
+                            
+                            <p class="montserat-SemiBold_green">28$</p>
+
+                            <button class="btn-add_to_cart">
+
+                                <img src="Images/SVG_Icons/Cart.svg" alt="" id="dance">
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="product-container">
+
+                        <div class="relative">
+                            <img class="img-sail_books" src="Images/Store_images/ThePsychologyBook_Book.png" alt="">
+                            <span class="montserat-Regular_green_small tag_by_id" id="psychology_tag">psychology</span>
+                        </div>
+
+                        <div class="spasing-book_author_name relative">
+                            <p class="montserat-Regular_black book_name">The Psychology Book</p>
+                            <p class="montserat-SemiBold_black">DK</p>
+                        </div>
+
+                        <div class="price_blok">
+                            
+                            <p class="montserat-SemiBold_green">26$</p>
+
+                            <button class="btn-add_to_cart">
+
+                                <img src="Images/SVG_Icons/Cart.svg" alt="" id="dance">
+
+                            </button>
+
+                        </div>
+
+                    </div>
+                    
+                    <div class="product-container">
+
+                        <div class="relative">
+                            <img class="img-sail_books" src="Images/Store_images/DoIKnowYou_Book.png" alt="">
+                            <span class="montserat-Regular_green_small tag_by_id" id="fiction_tag">fiction</span>
+                        </div>
+
+                        <div class="spasing-book_author_name relative">
+                            <p class="montserat-Regular_black book_name">Do I Know You?</p>
+                            <p class="montserat-SemiBold_black">Emily Wibberley</p>
+                        </div>
+
+                        <div class="price_blok">
+                            
+                            <p class="montserat-SemiBold_green">17$</p>
+
+                            <button class="btn-add_to_cart">
+
+                                <img src="Images/SVG_Icons/Cart.svg" alt="" id="dance">
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="product-container">
+
+                        <div class="relative">
+                            <img class="img-sail_books" src="Images/Store_images/Hourglass_Book.png" alt="">
+                            <span class="montserat-Regular_green_small tag_by_id" id="fiction_tag">fiction</span>
+                        </div>
+
+                        <div class="spasing-book_author_name relative">
+                            <p class="montserat-Regular_black book_name">Hourglass</p>
+                            <p class="montserat-SemiBold_black">Keiran Goddard</p>
+                        </div>
+
+                        <div class="price_blok">
+                            
+                            <p class="montserat-SemiBold_green">24$</p>
+
+                            <button class="btn-add_to_cart">
+
+                                <img src="Images/SVG_Icons/Cart.svg" alt="" id="dance">
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- <div class="product-container">
+
+                        <div class="relative">
+                            <img class="img-sail_books" src="Images/Store_images/Reckoning_Book.png" alt="">
+                            <span class="montserat-Regular_green_small tag_by_id" id="non-fiction_tag">non-fiction</span>
+                        </div>
+
+                        <div class="spasing-book_author_name relative">
+                            <p class="montserat-Regular_black">Reckoning</p>
+                            <p class="montserat-SemiBold_black">Eve Ensler</p>
+                        </div>
+
+                        <div class="price_blok">
+                            
+                            <p class="montserat-SemiBold_green">24$</p>
+
+                            <button class="btn-add_to_cart">
+
+                                <img src="Images/SVG_Icons/Cart.svg" alt="" id="dance">
+
+                            </button>
+
+                        </div>
+
+                    </div>
+                    
+                    <div class="product-container">
+
+                        <div class="relative">
+                            <img class="img-sail_books" src="Images/Store_images/Reckoning_Book.png" alt="">
+                            <span class="montserat-Regular_green_small tag_by_id" id="non-fiction_tag">non-fiction</span>
+                        </div>
+
+                        <div class="spasing-book_author_name relative">
+                            <p class="montserat-Regular_black">Reckoning</p>
+                            <p class="montserat-SemiBold_black">Eve Ensler</p>
+                        </div>
+
+                        <div class="price_blok">
+                            
+                            <p class="montserat-SemiBold_green">24$</p>
+
+                            <button class="btn-add_to_cart">
+
+                                <img src="Images/SVG_Icons/Cart.svg" alt="" id="dance">
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="product-container">
+
+                        <div class="relative">
+                            <img class="img-sail_books" src="Images/Store_images/Reckoning_Book.png" alt="">
+                            <span class="montserat-Regular_green_small tag_by_id" id="non-fiction_tag">non-fiction</span>
+                        </div>
+
+                        <div class="spasing-book_author_name relative">
+                            <p class="montserat-Regular_black">Reckoning</p>
+                            <p class="montserat-SemiBold_black">Eve Ensler</p>
+                        </div>
+
+                        <div class="price_blok">
+                            
+                            <p class="montserat-SemiBold_green">24$</p>
+
+                            <button class="btn-add_to_cart">
+
+                                <img src="Images/SVG_Icons/Cart.svg" alt="" id="dance">
+
+                            </button>
+
+                        </div>
+
+                    </div> -->
+
+                </div>
+
             </div>
 
         </section>
 
     </div>
     
-    <!-- <script type="text/javascript" src="vanilla-tilt.js"></script>
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
     <script type="text/javascript">
-        VanillaTilt.init(document.querySelector(".sddddd"), {
-            max: 100,
-            speed: 100
-        }); -->
+        VanillaTilt.init(document.querySelector("#dance"), {
+            max: 30,
+            speed: 15
+        });
+
+        VanillaTilt.init(document.querySelectorAll("#dance"), {
+            max: 30,
+            speed: 15
+        });
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="JS/main.js"></script>
 
 </body>

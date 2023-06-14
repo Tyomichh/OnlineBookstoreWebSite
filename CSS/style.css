@@ -5,12 +5,22 @@
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin: 0;
 }
 
 body {
-  background-color: #EFEFEC;
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  color: #202020;
+  background-color: #efefec;
 }
 
 .page {
@@ -42,10 +52,16 @@ body {
   margin-bottom: 100px;
 }
 .spasing-book_author_name {
-  margin: 48px 0;
+  margin: 77px 0 48px 0;
 }
 .spasing-lowergeneral {
   margin-bottom: 70px;
+}
+
+.book_name {
+  position: absolute;
+  width: 300px;
+  top: -30px;
 }
 
 .tag_by_id {
@@ -55,6 +71,10 @@ body {
   rotate: 180deg;
 }
 
+.btn-add_to_cart {
+  width: 36px;
+  height: 40px;
+}
 .btn-add_to_cart:hover {
   cursor: pointer;
 }
@@ -114,21 +134,15 @@ body {
   text-align: center;
 }
 
-.montserat, .montserat-SemiBold_black, .montserat-SemiBold_green, .montserat-SemiBold_black_main_title, .montserat-Regular_black_title, .montserat-Regular_green_small, .montserat-Regular_black, .montserat-Regular_green {
-  font-family: "Montserrat", sans-serif;
-  font-size: 30px;
-  font-weight: 400;
-  color: #202020;
-}
 .montserat-Regular_green {
-  color: #4D6649;
+  color: #4d6649;
 }
 .montserat-Regular_black {
   font-size: 25px;
 }
 .montserat-Regular_green_small {
   font-size: 18px;
-  color: #4D6649;
+  color: #4d6649;
 }
 .montserat-Regular_black_title {
   font-size: 50px;
@@ -141,7 +155,7 @@ body {
 .montserat-SemiBold_green {
   font-size: 25px;
   font-weight: 600;
-  color: #4D6649;
+  color: #4d6649;
 }
 .montserat-SemiBold_black {
   font-size: 25px;
@@ -177,7 +191,7 @@ body {
   align-items: center;
 }
 
-.menu-wrapper {
+.menu {
   position: relative;
 }
 .menu-burger {
@@ -208,43 +222,46 @@ body {
 .menu-burger span::before {
   top: 9px;
 }
-.menu-list {
+.menu-wrapper {
   position: fixed;
   top: 0;
   left: 0;
   width: 400px;
-  height: 300vh;
+  height: 100vh;
   display: block;
   transition: 0.5s;
   flex-direction: column;
-  border-right: 2px solid #202020;
   background-color: rgba(77, 102, 73, 0.04);
-  -webkit-backdrop-filter: blur(15px);
-          backdrop-filter: blur(15px);
-  transform: translateX(-100%);
+  transform: translateX(-99%);
   z-index: 1;
 }
-.menu-list.active {
+.menu-wrapper.active-wrap {
   transform: translateX(0);
+  border-right: 2px solid #202020;
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
 }
-.menu-list .listst {
+.menu-listst {
   width: 100%;
-  padding: 8px 0;
   text-align: center;
   list-style-type: none;
 }
-.menu-list .listst:nth-child(1) {
+.menu-listst:nth-child(1) {
   margin-top: 400px;
 }
-.menu-list .listst:hover {
-  background-color: #d7d7d7;
+.menu-listst:hover {
+  background-color: rgba(215, 215, 215, 0.4);
   transition: background-color 0.2s linear;
 }
-.menu-list .listst .link {
+.menu-list-link {
   width: 100%;
   display: block;
+  padding: 8px 0;
   text-decoration: none;
   color: #202020;
+}
+.menu-list-link.active-list {
+  background-color: rgba(215, 215, 215, 0.4);
 }
 
 .logo {
@@ -254,7 +271,8 @@ body {
 .product-columns {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 30px;
+  grid-template-rows: 1fr;
+  gap: 30px;
 }
 .product-container {
   max-width: 390px;
@@ -262,22 +280,42 @@ body {
   height: 675px;
   padding: 48px;
   border: 1px solid rgba(116, 116, 116, 0.3);
-  background-color: #EFEFEC;
+  background-color: #efefec;
   transition: transform 0.2s linear;
 }
 .product-container:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .price_blok {
   display: grid;
+  height: 40px;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 175px;
   align-items: end;
+  justify-items: center;
 }
 
 .shopAll_center {
   width: 163px;
   left: 50%;
   transform: translate(-50%);
+}
+
+.catalog-nav {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+.catalog-nav-link {
+  font-weight: 600;
+  text-decoration: none;
+  color: #202020;
+}
+.catalog-nav-link:hover {
+  cursor: pointer;
+}
+.catalog-nav-link:focus {
+  color: #4d6649;
+  text-decoration: underline;
 }/*# sourceMappingURL=style.css.map */
