@@ -59,8 +59,12 @@ body {
 }
 
 .book_name {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
   position: absolute;
   width: 300px;
+  height: 29px;
   top: -30px;
 }
 
@@ -85,6 +89,36 @@ body {
 .btn-container:hover {
   cursor: pointer;
 }
+.btn-show_more {
+  display: block;
+  margin: 0 auto;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-show_more:before {
+  cursor: pointer;
+  content: "show more";
+}
+.btn-show_more:hover {
+  cursor: pointer;
+  color: #4d6649;
+  text-decoration: underline;
+}
+.btn-show_less {
+  display: block;
+  margin: 0 auto;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-show_less:before {
+  cursor: pointer;
+  content: "show less";
+}
+.btn-show_less:hover {
+  cursor: pointer;
+  color: #4d6649;
+  text-decoration: underline;
+}
 
 .img-basket {
   width: 32px;
@@ -96,6 +130,7 @@ body {
 }
 .img-sail_books {
   max-width: 272px;
+  max-height: 377px;
   width: 100%;
 }
 .img-arrow {
@@ -132,6 +167,10 @@ body {
   grid-template-columns: 1.3fr 0.9fr 1fr 1fr 1.2fr;
   grid-column-gap: 30px;
   text-align: center;
+}
+
+.d_none {
+  display: none;
 }
 
 .montserat-Regular_green {
