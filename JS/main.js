@@ -64,10 +64,9 @@ $(document).on('click', '.btn-show_more', function () {
   $('.product-container:lt(' + start + ')').removeClass('d_none');
 
   if ($('.product-container:not(.d_none)').length === contProductCntnrs) {
-
+    $('#showFirst').attr('data-scroll', '#showSecond');
     $('#showFirst').addClass('btn-show_less');
     $('#showFirst').removeClass('btn-show_more');
-
   }
 
 });
@@ -82,7 +81,9 @@ $(document).on('click', '.btn-show_less', function () {
 
 
   if ($('.d_none').length === (start - 3)) {
+    $('#showSecond').attr('data-scroll', '#showFirst');
     $('#showFirst').addClass('btn-show_more');
     $('#showFirst').removeClass('btn-show_less');
   }
 });
+

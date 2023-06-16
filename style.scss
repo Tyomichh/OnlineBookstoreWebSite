@@ -10,7 +10,9 @@ $TransparentGrey: rgba(116, 116, 116, 0.3);
 $TransparentLightGrey: rgba(215, 215, 215, 0.4);
 $Invisible: rgba(215, 215, 215, 0);
 
+
 // ------------------------------------------------------------------------------COMMON MAIN STYLES------------------------------------------------------------------------------
+
 
 * {
   margin: 0;
@@ -216,7 +218,9 @@ body {
   display: none;
 }
 
+
 // ------------------------------------------------------------------------------TEXT STYLES------------------------------------------------------------------------------
+
 
 .montserat {
   &-Regular_green {
@@ -289,7 +293,9 @@ body {
   }
 }
 
+
 // ------------------------------------------------------------------------------HEADER------------------------------------------------------------------------------
+
 
 .nav {
   height: 70px;
@@ -417,7 +423,9 @@ body {
 // .basket {
 // }
 
+
 // ------------------------------------------------------------------------------SECTION 2------------------------------------------------------------------------------
+
 
 .product {
   &-columns {
@@ -457,7 +465,9 @@ body {
   transform: translate(-50%);
 }
 
+
 // ------------------------------------------------------------------------------SECTION 4------------------------------------------------------------------------------
+
 
 .catalog-nav {
   display: flex;
@@ -474,5 +484,46 @@ body {
       color: $LeafyGreen;
       text-decoration: underline;
     }
+  }
+}
+
+
+// ------------------------------------------------------------------------------SECTION 4------------------------------------------------------------------------------
+
+
+.advertising_block {
+  width: 100%;
+  max-height: 402px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+
+  &-column {
+    max-width: 720px;
+    width: 100%;
+    max-height: 402px;
+    position: relative;
+    &:nth-child(1) {
+      border: 1px solid $TransparentGrey;
+      border-right: none;
+    }
+    &:nth-child(2) {
+      border: 1px solid $TransparentGrey;
+      border-left: none;
+    }
+  }
+
+  &-paragraph {
+        max-width: 442px;
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 0;
   }
 }
