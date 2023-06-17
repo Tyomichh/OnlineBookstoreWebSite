@@ -6,6 +6,7 @@ const menuBTN = $('.menu-burger'),
 let elements = $('[id]');
 const idArray = [];
 
+
 /*Adding id tags for navigatiton to the arr*/ 
 elements.each(function() {
     if (this.id.endsWith("_tag")) {
@@ -14,6 +15,7 @@ elements.each(function() {
   });
 
 console.log(idArray);
+
 
 /*Navigation burger*/
 menuBTN.on('click', (e) => {
@@ -32,6 +34,7 @@ $(document).on('click', (e) => {
   }
 });
 
+
 /*Smooth scroll*/
 $('[data-scroll]').on('click', function (event) {
   event.preventDefault();
@@ -49,41 +52,51 @@ $('[data-scroll]').on('click', function (event) {
 });
 
 
-let contProductCntnrs = $('.product-container').length,
-  start = 9,
+/*Show more show less btn with smooth scroll*/
+let contProductCntnrs = $('.product-container-ctlg').length,
+  start = 6,
   show = 3,
-  fullend = $('.product-container').length;
+  fullend = $('.product-container-ctlg').length;
 
-$('.product-container').addClass('d_none');
-$('.product-container:lt(' + start + ')').removeClass('d_none');
+  
+$('.product-container-ctlg').addClass('d_none');
+$('.product-container-ctlg:lt(' + start + ')').removeClass('d_none');
+
 
 $(document).on('click', '.btn-show_more', function () {
 
+  $('html,body').animate({
+    scrollTop: $('.showMrScroll').offset().top
+  },1000);
+
   start = (start + show <= contProductCntnrs) ? start + show : contProductCntnrs;
 
-  $('.product-container:lt(' + start + ')').removeClass('d_none');
+  $('.product-container-ctlg:lt(' + start + ')').removeClass('d_none');
 
-  if ($('.product-container:not(.d_none)').length === contProductCntnrs) {
-    $('#showFirst').attr('data-scroll', '#showSecond');
-    $('#showFirst').addClass('btn-show_less');
-    $('#showFirst').removeClass('btn-show_more');
+  if ($('.product-container-ctlg:not(.d_none)').length === contProductCntnrs) {
+    $('.showMrScroll').removeClass('btn-show_more');
+    $('.showMrScroll').addClass('btn-show_less');
   }
 
 });
+
 
 $(document).on('click', '.btn-show_less', function () {
 
-  start = 9;
+  start = 6;
 
-  fullend = (fullend <= 9) ? $('.product-container').length : fullend;
+  fullend = (fullend <= 6) ? $('.product-container-ctlg').length : fullend;
   fullend = (fullend >= start) ? fullend - show : start;
-  $('.product-container:gt(' + (fullend - 1) + ')').addClass('d_none');
 
+  $('.product-container-ctlg:gt(' + (fullend - 1) + ')').addClass('d_none');
 
-  if ($('.d_none').length === (start - 3)) {
-    $('#showSecond').attr('data-scroll', '#showFirst');
-    $('#showFirst').addClass('btn-show_more');
-    $('#showFirst').removeClass('btn-show_less');
+  if ($('.d_none').length === start) {
+    $('.showMrScroll').removeClass('btn-show_less');
+    $('.showMrScroll').addClass('btn-show_more');
   }
-});
 
+  $('html,body').animate({
+    scrollTop: $('.showLsScroll:not(.d_none)').last().offset().top
+  },1000);
+
+});
