@@ -3,6 +3,7 @@
   padding: 0;
   border: 0;
   box-sizing: border-box;
+  outline: none;
 }
 
 h1,
@@ -19,8 +20,8 @@ body {
   font-family: "Montserrat", sans-serif;
   font-size: 30px;
   font-weight: 400;
-  color: #202020;
-  background-color: #efefec;
+  color: #2c2c2c;
+  background-color: rgba(240, 240, 240, 0.8588235294);
 }
 
 .page {
@@ -74,6 +75,7 @@ body {
   bottom: 1%;
   writing-mode: vertical-lr;
   rotate: 180deg;
+  z-index: 10;
 }
 
 .btn-add_to_cart {
@@ -102,7 +104,7 @@ body {
 }
 .btn-show_more:hover {
   cursor: pointer;
-  color: #4d6649;
+  color: #466042;
   text-decoration: underline;
 }
 .btn-show_less {
@@ -117,13 +119,13 @@ body {
 }
 .btn-show_less:hover {
   cursor: pointer;
-  color: #4d6649;
+  color: #466042;
   text-decoration: underline;
 }
 
-.img-basket {
-  width: 32px;
-  height: 36px;
+.img-main_sail_cart {
+  font-size: 38px;
+  color: #2c2c2c;
 }
 .img-books_branch {
   height: 900px;
@@ -133,11 +135,25 @@ body {
   max-width: 272px;
   max-height: 377px;
   width: 100%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 .img-arrow {
   top: -26px;
   right: -10px;
   position: absolute;
+}
+.img-sail_cart {
+  font-size: 38px;
+}
+.img-sail_cart:hover {
+  color: #466042;
+}
+.img-link {
+  text-decoration: none;
+}
+.img-logo {
+  font-size: 40px;
+  color: #2c2c2c;
 }
 
 .paragraf-rotate2023 {
@@ -180,14 +196,14 @@ body {
   font-weight: 400;
 }
 .montserat-Regular_green {
-  color: #4d6649;
+  color: #466042;
 }
 .montserat-Regular_black {
   font-size: 25px;
 }
 .montserat-Regular_green_small {
   font-size: 18px;
-  color: #4d6649;
+  color: #466042;
 }
 .montserat-Regular_black_title {
   font-size: 50px;
@@ -200,7 +216,7 @@ body {
 .montserat-SemiBold_green {
   font-size: 25px;
   font-weight: 600;
-  color: #4d6649;
+  color: #466042;
 }
 .montserat-SemiBold_black {
   font-size: 25px;
@@ -211,7 +227,7 @@ body {
   font-family: "Inter", sans-serif;
   font-size: 30px;
   text-orientation: sideways;
-  color: #202020;
+  color: #2c2c2c;
 }
 .inter-Light_black {
   font-weight: 300;
@@ -238,6 +254,7 @@ body {
 
 .menu {
   position: relative;
+  height: 46px;
 }
 .menu-burger {
   width: 30px;
@@ -251,7 +268,7 @@ body {
   height: 3px;
   display: block;
   position: relative;
-  background-color: #202020;
+  background-color: #2c2c2c;
 }
 .menu-burger span::before, .menu-burger span::after {
   content: "";
@@ -259,7 +276,7 @@ body {
   height: 3px;
   position: absolute;
   left: 0;
-  background-color: #202020;
+  background-color: #2c2c2c;
 }
 .menu-burger span::after {
   bottom: 9px;
@@ -274,15 +291,15 @@ body {
   width: 400px;
   height: 100vh;
   display: block;
-  transition: 0.5s;
+  transition: 0.3s;
   flex-direction: column;
   background-color: rgba(77, 102, 73, 0.04);
-  transform: translateX(-99%);
+  transform: translateX(-100%);
+  border-right: 2px solid #2c2c2c;
   z-index: 1;
 }
 .menu-wrapper.active-wrap {
   transform: translateX(0);
-  border-right: 2px solid #202020;
   -webkit-backdrop-filter: blur(15px);
           backdrop-filter: blur(15px);
 }
@@ -303,7 +320,7 @@ body {
   display: block;
   padding: 8px 0;
   text-decoration: none;
-  color: #202020;
+  color: #2c2c2c;
 }
 .menu-list-link.active-list {
   background-color: rgba(215, 215, 215, 0.4);
@@ -324,9 +341,9 @@ body {
   width: 100%;
   height: 675px;
   padding: 48px;
-  border: 1px solid rgba(116, 116, 116, 0.3);
-  background-color: #efefec;
+  background-color: rgba(240, 240, 240, 0.8588235294);
   transition: transform 0.2s linear;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
 }
 .product-container:hover, .product-container-ctlg:hover {
   transform: scale(1.02);
@@ -354,13 +371,13 @@ body {
 .catalog-nav-link {
   font-weight: 600;
   text-decoration: none;
-  color: #202020;
+  color: #2c2c2c;
 }
 .catalog-nav-link:hover {
   cursor: pointer;
 }
 .catalog-nav-link:focus {
-  color: #4d6649;
+  color: #466042;
   text-decoration: underline;
 }
 

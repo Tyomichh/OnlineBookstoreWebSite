@@ -67,7 +67,7 @@ $(document).on('click', '.btn-show_more', function () {
 
   $('html,body').animate({
     scrollTop: $('.showMrScroll').offset().top
-  },1000);
+  },800);
 
   start = (start + show <= contProductCntnrs) ? start + show : contProductCntnrs;
 
@@ -97,6 +97,7 @@ $(document).on('click', '.btn-show_less', function () {
 
   $('html,body').animate({
     scrollTop: $('.showLsScroll:not(.d_none)').last().offset().top
-  },1000);
+  },800);
 
 });
+	
