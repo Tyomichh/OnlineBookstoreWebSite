@@ -1,6 +1,6 @@
 $black: #2c2c2c;
 $LeafyGreen: #466042;
-$WhiteCol: #f0f0f0db;
+$WhiteCol: #f0f0f0;
 $GreyCol: #747474;
 $LightGrey: #d7d7d7;
 $DarkerWhite: #e6e6e6;
@@ -33,18 +33,15 @@ p {
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
-  font-size: 30px;
-  font-weight: 400;
   color: $black;
   background-color: $WhiteCol;
 }
 
 .page {
   max-width: 1440px;
-  width: 1440px;
   display: block;
   margin: 0 auto;
+  // overflow: hidden;
 }
 
 .relative {
@@ -70,6 +67,11 @@ body {
     height: 836px;
     @extend .container;
   }
+
+  &-slider {
+    max-width: 1210px;
+    @extend .container;
+  }
 }
 
 .spasing {
@@ -83,6 +85,9 @@ body {
 
   &-lowergeneral {
     margin-bottom: 70px;
+  }
+  &-slider {
+    margin: 20px 16px 40px 16px;
   }
 }
 
@@ -287,6 +292,11 @@ body {
     font-size: 25px;
     font-weight: 600;
   }
+
+  &-sail {
+    font-size: 18px;
+    text-decoration: line-through;
+  }
 }
 
 .inter {
@@ -461,13 +471,16 @@ body {
   }
 
   &-container {
+    position: relative; /* Встановлюємо позицію relative для елемента */
+  z-index: 1;
     max-width: 390px;
     width: 100%;
     height: 675px;
     padding: 48px;
     background-color: $WhiteCol;
     transition: transform 0.2s linear;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+    // border: 1px solid $TransparentLightGrey;
+    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.25));
     
     &:hover {
       transform: scale(1.02);
@@ -481,6 +494,7 @@ body {
 
 .price_blok {
   display: grid;
+  position: relative;
   height: 40px;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 175px;
@@ -492,6 +506,12 @@ body {
   width: 163px;
   left: 50%;
   transform: translate(-50%);
+}
+
+.sail {
+  position: absolute;
+  top: 40%;
+  left: 22%;
 }
 
 
@@ -559,3 +579,112 @@ body {
 
 
 // ------------------------------------------------------------------------------SECTION 6------------------------------------------------------------------------------
+
+/* Слайдер */
+.block_slider {
+  // min-width: 0;
+}
+.slick-slider{
+  position: relative;
+}
+
+/* Слайдер запущен */
+.slick-slider.slick-initialized{}
+
+/* Слайдер с точками */
+.slick-slider.slick-dotted{}
+
+/* Ограничивающая оболочка */
+.slick-list {
+  overflow: hidden;
+}
+
+/* Лента слайдов */
+.slick-track{
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Слайд */
+.slick-slide{
+    // visibility: hidden;
+    // pointer-events: none;
+    // transition: all .3s linear;
+}
+
+/* Слайд активный (показывается) */
+.slick-slide.slick-active{
+    // visibility: visible;
+    // pointer-events: auto;
+}
+
+/* Слайд основной */
+.slick-slide.slick-current{}
+
+/* Слайд по центру */
+.slick-slide.slick-center{}
+
+/* Клонированный слайд */
+.slick-slide.slick-cloned{}
+
+.slider-item {
+  // min-width: 0;
+  // opacity: 0;
+  // text-align: center;
+  // transition: opacity .3s linear;
+}
+
+.slider-item.slick-center{
+  // opacity: 1;
+}
+
+/* Стрелки */
+.slick-arrow{ 
+  position: absolute;
+  top: 50%;
+  z-index: 100;
+  font-size: 0;
+  width: 40px;
+  height: 18px;
+  margin-top: -9px;
+}
+
+.slick-arrow.slick-prev{
+  left: -5%;
+  background : url('../Images/SVG_Icons/Arrow_Slider_left.svg') 0 0 / 100% no-repeat;
+}
+
+.slick-arrow.slick-next{
+  right: -5%;
+  background: url('../Images/SVG_Icons/Arrow_Slider_right.svg') 0 0 / 100% no-repeat;
+}
+
+.slick-arrow.slick-disabled{
+  opacity: 0.2;
+}
+
+
+/* Точки (булиты) */
+.slick-dots{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slick-dots li{
+  list-style: none;
+  margin: 0 5px;
+}
+
+.slick-dots li button{
+  font-size: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.slick-dots li.slick-active button{
+  background-color: transparent;
+  border: 1px solid #fff;
+}

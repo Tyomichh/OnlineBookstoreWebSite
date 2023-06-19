@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -17,16 +18,12 @@ p {
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
-  font-size: 30px;
-  font-weight: 400;
   color: #2c2c2c;
-  background-color: rgba(240, 240, 240, 0.8588235294);
+  background-color: #f0f0f0;
 }
 
 .page {
   max-width: 1440px;
-  width: 1440px;
   display: block;
   margin: 0 auto;
 }
@@ -35,7 +32,7 @@ body {
   position: relative;
 }
 
-.container, .container-second_section, .container-first_section, .container-bigger {
+.container, .container-slider, .container-second_section, .container-first_section, .container-bigger {
   max-width: 1170px;
   height: auto;
   margin: 0 auto;
@@ -49,6 +46,9 @@ body {
 .container-second_section {
   height: 836px;
 }
+.container-slider {
+  max-width: 1210px;
+}
 
 .spasing-general {
   margin-bottom: 100px;
@@ -58,6 +58,9 @@ body {
 }
 .spasing-lowergeneral {
   margin-bottom: 70px;
+}
+.spasing-slider {
+  margin: 20px 16px 40px 16px;
 }
 
 .book_name {
@@ -222,6 +225,10 @@ body {
   font-size: 25px;
   font-weight: 600;
 }
+.montserat-sail {
+  font-size: 18px;
+  text-decoration: line-through;
+}
 
 .inter, .inter-SemiBold_black, .inter-Light_black {
   font-family: "Inter", sans-serif;
@@ -337,19 +344,22 @@ body {
   gap: 30px;
 }
 .product-container, .product-container-ctlg {
+  position: relative; /* Встановлюємо позицію relative для елемента */
+  z-index: 1;
   max-width: 390px;
   width: 100%;
   height: 675px;
   padding: 48px;
-  background-color: rgba(240, 240, 240, 0.8588235294);
+  background-color: #f0f0f0;
   transition: transform 0.2s linear;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+  filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.25));
 }
 .product-container:hover, .product-container-ctlg:hover {
   transform: scale(1.02);
 }
 .price_blok {
   display: grid;
+  position: relative;
   height: 40px;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 175px;
@@ -361,6 +371,12 @@ body {
   width: 163px;
   left: 50%;
   transform: translate(-50%);
+}
+
+.sail {
+  position: absolute;
+  top: 40%;
+  left: 22%;
 }
 
 .catalog-nav {
@@ -414,8 +430,75 @@ body {
   z-index: 0;
 }
 
-.blok_big_sldr {
-  display: block;
-  width: 100%;
-  height: 1000px;
+/* Слайдер */
+.slick-slider {
+  position: relative;
+}
+
+/* Слайдер запущен */
+/* Слайдер с точками */
+/* Ограничивающая оболочка */
+.slick-list {
+  overflow: hidden;
+}
+
+/* Лента слайдов */
+.slick-track {
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Слайд */
+/* Слайд активный (показывается) */
+/* Слайд основной */
+/* Слайд по центру */
+/* Клонированный слайд */
+/* Стрелки */
+.slick-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 100;
+  font-size: 0;
+  width: 40px;
+  height: 18px;
+  margin-top: -9px;
+}
+
+.slick-arrow.slick-prev {
+  left: -5%;
+  background: url("../Images/SVG_Icons/Arrow_Slider_left.svg") 0 0/100% no-repeat;
+}
+
+.slick-arrow.slick-next {
+  right: -5%;
+  background: url("../Images/SVG_Icons/Arrow_Slider_right.svg") 0 0/100% no-repeat;
+}
+
+.slick-arrow.slick-disabled {
+  opacity: 0.2;
+}
+
+/* Точки (булиты) */
+.slick-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slick-dots li {
+  list-style: none;
+  margin: 0 5px;
+}
+
+.slick-dots li button {
+  font-size: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.slick-dots li.slick-active button {
+  background-color: transparent;
+  border: 1px solid #fff;
 }/*# sourceMappingURL=style.css.map */

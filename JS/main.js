@@ -100,4 +100,33 @@ $(document).on('click', '.btn-show_less', function () {
   },800);
 
 });
+
+$('.block_slider').slick({
+  slidesToShow: 3,
+  // slidesToScroll: 1,
+  // adaptiveHeight: true,
+  // autoplay: true,
+  // autoplaySpeed: 6000,
+  speed: 500,
+  eassng: 'linear',
+  // infinite: false,
+  // initialSlide:3,
+  draggble: false,
+  // touchThreshold: 10,
+  // touchMove: false,
+  // waitForAnimate: 10,
+  centerMode: true,
+  variableWidth: true,
+  adaptiveHeight: false,
+  // rows: 2,
+  // slidesPerRow: 3,
+  //vertical: true, //Потрібно щоб слайдер не був флексовим
+  // asNavFor: "назва пов'язаного слайдера"
+  /* responsive:[{
+    breakpoints: 768;
+    settings {
+      slidesToShow: 2;
+    }
+  }]*/
+});
 	
