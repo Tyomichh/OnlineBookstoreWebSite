@@ -2,27 +2,34 @@ const menuBTN = $('.menu-burger'),
   menWrp = $('.menu-wrapper'),
   menLst = $('.menu-list'),
   menLnk = $('.menu-list-link'),
-  menInp = $('.menu-input');
-let elements = $('[id]');
-const idArray = [];
+  menInp = $('.menu-input'),
+  idArray = [];
 
 
-/*Adding id tags for navigatiton to the arr*/ 
-elements.each(function() {
-    if (this.id.endsWith("_tag")) {
-      idArray.push(this.id);
-    }
-  });
+
+
+
+/*Adding id tags for navigatiton to the arr*/
+$('[id$="_tag"]').each(function () {
+  var id = this.id;
+
+  if ($.inArray(id, idArray) === -1) {
+    idArray.push(id);
+  }
+});
 
 console.log(idArray);
 
 
+
+
+
 /*Navigation burger*/
-menuBTN.on('click', (e) => {
+menuBTN.on('click', e => {
   menWrp.toggleClass('active-wrap');
 });
 
-$(document).on('click', (e) => {
+$(document).on('click', e => {
   const click = e.originalEvent.composedPath().includes(menuBTN.get(0));
   const clickedEl = e.target;
   const isMenLnk = Array.from(menLnk).some(link => link.contains(clickedEl));
@@ -33,6 +40,9 @@ $(document).on('click', (e) => {
     menWrp.removeClass('active-wrap');
   }
 });
+
+
+
 
 
 /*Smooth scroll*/
@@ -52,13 +62,65 @@ $('[data-scroll]').on('click', function (event) {
 });
 
 
+
+
+
+/*CATALOG PRODUCT FILTER*/
+const list = $('.catalog-nav');
+const items = $('.product-container-ctlg');
+const listItems = $('.catalog-nav-list');
+
+function filter() {
+  list.on('click', function(ev) {
+    const targetId = $(ev.target).data('id');
+    const target = ev.target;
+
+    console.log(targetId);
+    if ($(target).hasClass('catalog-nav-list')) {
+      listItems.removeClass('catalog-nav-active');
+      $(target).addClass('catalog-nav-active');
+    }
+
+    switch (targetId) {
+      case 'all':
+        getItems('product-container-ctlg');
+        break;
+
+      case 'psychology_tag':
+      case 'fiction_tag':
+      case 'non-fiction_tag':
+      case 'business&finance_tag':
+      case 'history_tag':
+      case 'philosophy_tag':
+        getItems(targetId);
+        break;
+    }
+  });
+}
+
+filter();
+
+function getItems(IDName) {
+  items.each(function() {
+    if (this.id === IDName) {
+      $(this).css('display', 'block');
+    } else {
+      $(this).css('display', 'none');
+    }
+  });
+}
+
+
+
+
+
 /*Show more show less btn with smooth scroll*/
 let contProductCntnrs = $('.product-container-ctlg').length,
   start = 6,
   show = 3,
   fullend = $('.product-container-ctlg').length;
 
-  
+
 $('.product-container-ctlg').addClass('d_none');
 $('.product-container-ctlg:lt(' + start + ')').removeClass('d_none');
 
@@ -67,7 +129,7 @@ $(document).on('click', '.btn-show_more', function () {
 
   $('html,body').animate({
     scrollTop: $('.showMrScroll').offset().top
-  },800);
+  }, 800);
 
   start = (start + show <= contProductCntnrs) ? start + show : contProductCntnrs;
 
@@ -97,9 +159,13 @@ $(document).on('click', '.btn-show_less', function () {
 
   $('html,body').animate({
     scrollTop: $('.showLsScroll:not(.d_none)').last().offset().top
-  },800);
+  }, 800);
 
 });
+
+
+
+
 
 $('.block_slider').slick({
   slidesToShow: 3,
@@ -109,6 +175,6 @@ $('.block_slider').slick({
   centerMode: true,
   variableWidth: true,
   adaptiveHeight: false,
-  initialSlide:1
+  initialSlide: 1
 });
-	
+

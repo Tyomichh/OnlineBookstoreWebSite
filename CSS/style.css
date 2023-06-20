@@ -344,12 +344,11 @@ body {
 .product-columns {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
+  grid-template-rows: auto;
   gap: 30px;
 }
 .product-container, .product-container-ctlg {
   position: relative; /* Встановлюємо позицію relative для елемента */
-  z-index: 1;
   max-width: 390px;
   width: 100%;
   height: 675px;
@@ -388,15 +387,17 @@ body {
   justify-content: center;
   gap: 25px;
 }
-.catalog-nav-link {
+.catalog-nav-list {
   font-weight: 600;
   text-decoration: none;
   color: #2c2c2c;
+  list-style-type: none;
+  text-align: center;
 }
-.catalog-nav-link:hover {
+.catalog-nav-list:hover {
   cursor: pointer;
 }
-.catalog-nav-link:focus {
+.catalog-nav-active {
   color: #466042;
   text-decoration: underline;
 }
@@ -503,4 +504,22 @@ body {
 }
 .footer-contacts a:hover {
   color: #466042;
+}
+
+.hide {
+  opacity: 1;
+  animation-name: a1;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes a1 {
+  to {
+    opacity: 0;
+    min-height: 0;
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
 }/*# sourceMappingURL=style.css.map */
