@@ -129,6 +129,7 @@ body {
     display: block;
     margin: 0 auto;
     font-weight: 600;
+    text-decoration: underline;
     cursor: pointer;
     &:before {
       cursor: pointer;
@@ -138,7 +139,6 @@ body {
     &:hover {
       cursor: pointer;
       color: $LeafyGreen;
-      text-decoration: underline;
     }
   }
 

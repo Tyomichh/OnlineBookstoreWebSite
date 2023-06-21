@@ -69,9 +69,10 @@ $('[data-scroll]').on('click', function (event) {
 const list = $('.catalog-nav');
 const items = $('.product-container-ctlg');
 const listItems = $('.catalog-nav-list');
+const swMr = $('.showMrScroll');
 
 function filter() {
-  list.on('click', function(ev) {
+  list.on('click', function (ev) {
     const targetId = $(ev.target).data('id');
     const target = ev.target;
 
@@ -83,7 +84,11 @@ function filter() {
 
     switch (targetId) {
       case 'all':
-        getItems('product-container-ctlg');
+        // getItems('product-container-ctlg');
+        swMr.css('opacity', '1');
+        swMr.css('pointer-events', 'auto');
+        $('.product-container-ctlg').addClass('d_none');
+        $('.product-container-ctlg:lt(' + 6 + ')').removeClass('d_none');
         break;
 
       case 'psychology_tag':
@@ -93,6 +98,10 @@ function filter() {
       case 'history_tag':
       case 'philosophy_tag':
         getItems(targetId);
+        swMr.css('opacity', '0.5');
+        swMr.css('pointer-events', 'none');
+        $('.showMrScroll').removeClass('btn-show_less');
+        $('.showMrScroll').addClass('btn-show_more');
         break;
     }
   });
@@ -101,11 +110,11 @@ function filter() {
 filter();
 
 function getItems(IDName) {
-  items.each(function() {
+  items.each(function () {
     if (this.id === IDName) {
-      $(this).css('display', 'block');
+      $(this).removeClass('d_none');
     } else {
-      $(this).css('display', 'none');
+      $(this).addClass('d_none');
     }
   });
 }
