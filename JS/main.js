@@ -1,46 +1,125 @@
-const menuBTN = $('.menu-burger'),
-  menWrp = $('.menu-wrapper'),
-  menLst = $('.menu-list'),
-  menLnk = $('.menu-list-link'),
-  menInp = $('.menu-input'),
-  idArray = [];
-
-
-
-
-
-/*Adding id tags for navigatiton to the arr*/
-$('[id$="_tag"]').each(function () {
-  var id = this.id;
-
-  if ($.inArray(id, idArray) === -1) {
-    idArray.push(id);
-  }
-});
-
-console.log(idArray);
-
-
-
-
-
 /*Navigation burger*/
-menuBTN.on('click', e => {
-  menWrp.toggleClass('active-wrap');
+$('.menu-burger').on('click', e => {
+  $('.menu-wrapper').toggleClass('active-wrap');
 });
 
 $(document).on('click', e => {
-  const click = e.originalEvent.composedPath().includes(menuBTN.get(0));
+  const click = e.originalEvent.composedPath().includes($('.menu-burger').get(0));
   const clickedEl = e.target;
-  const isMenLnk = Array.from(menLnk).some(link => link.contains(clickedEl));
+  const isMenLnk = Array.from($('.menu-list-link')).some(link => link.contains(clickedEl));
 
-  if (clickedEl === menLst.get(0) || clickedEl === menInp.get(0) || isMenLnk) {
+  if (clickedEl === $('.menu-list').get(0) || clickedEl === $('.menu-input').get(0) || isMenLnk) {
     return;
   } else if (!click) {
-    menWrp.removeClass('active-wrap');
+    $('.menu-wrapper').removeClass('active-wrap');
   }
 });
 
+
+
+
+
+
+
+const shopping = document.querySelector('.shopping-cart'),//SHOPPING = SHOPPING
+  shplist = document.querySelector('.shopping-list'),// CARD = shplist
+  cls = document.querySelector('.clsShopping');// Closehopping = cls
+
+shopping.addEventListener('click', () => {
+  shplist.classList.add('active-shopping');
+})
+cls.addEventListener('click', () => {
+  shplist.classList.remove('active-shopping');
+})
+
+
+// // Оновлюємо кількість товарів у корзині
+// const currentQuantity = parseInt(shoppingQuantity.textContent);
+// shoppingQuantity.textContent = currentQuantity + 1;
+
+const productContainers = Array.from(document.querySelectorAll('.product-container-ctlg'));
+let products = [];
+let encounteredNames = {};
+let quantyty = document.querySelector('.shopping-quantyty');// QUANTYTY = QUANTYTY
+let listCard = document.querySelector('.shopping-listCard');//LISTCARD = LISTCARD
+let total = document.querySelector('.total');//TOTAL = TOTAL
+//LIST = product-container-ctlg
+
+productContainers.forEach((container, index) => {
+  const name = container.querySelector('.book_name').textContent;
+
+  // Перевірка на унікальність назви
+  if (encounteredNames[name]) {
+    return; // Якщо назва вже зустрічалася, пропускаємо поточний елемент
+  }
+
+  encounteredNames[name] = true;
+
+  const image = container.querySelector('img').getAttribute('src');
+  const price = parseFloat(container.querySelector('.montserat-SemiBold_green').textContent);
+
+  const product = {
+    numbr: index + 1,
+    name: name,
+    image: image,
+    price: price,
+  };
+
+  container.setAttribute('data-key', index);
+
+  products.push(product);
+});
+let listCards = [];
+
+console.log(products);
+
+function AddToCart(key) {
+  if (listCards[key] == null) {
+    listCards[key] = products[key];
+    listCards[key].quantyty = 1;
+  }
+  reloadCard();
+}
+
+function reloadCard() {
+  listCard.innerHTML = '';
+  let count = 0;
+  let totalPrice = 0;
+  listCards.forEach((value, key) => {
+    totalPrice = totalPrice + value.price;
+    count = count + value.quantyty;
+
+    if (value != null) {
+      let newDiv = document.createElement('li');
+
+      newDiv.innerHTML = `
+    <img class="cart_list-img" src="${value.image}">
+    <div class="cart_list-text_block montserat-cardLi">
+      <div class="cart_list-book_name">${value.name}</div>
+      <div>${value.price.toLocaleString()}$</div>
+    </div>
+    <div class="cart_list-MrLss_block montserat-cardLi">
+      <button class="cart_list-MrLss_block_style" onclick="changeQuantity(${key},${value.quantyty - 1})">-</button>
+      <div class="cart_list-count">${value.quantyty}</div>
+      <button class="cart_list-MrLss_block_style" onclick="changeQuantity(${key},${value.quantyty + 1})">+</button>
+     </div>`
+
+      listCard.appendChild(newDiv);
+    }
+  })
+
+  total.innerText = totalPrice.toLocaleString();
+  quantyty.innerText = count;
+}
+
+function changeQuantity(params) {
+  
+}
+
+const addToCartButtons = document.querySelectorAll('.btn-add_to_cart');
+addToCartButtons.forEach((button) => {
+  button.setAttribute('onclick', `AddToCart(this.closest('.product-container-ctlg').getAttribute('data-key'))`);
+})
 
 
 
@@ -161,7 +240,7 @@ $(document).on('click', '.btn-show_less', function () {
 
   $('.product-container-ctlg:gt(' + (fullend - 1) + ')').addClass('d_none');
 
-  if ($('.d_none').length === start) {
+  if ($('.d_none').length === (start + 3)) {
     $('.showMrScroll').removeClass('btn-show_less');
     $('.showMrScroll').addClass('btn-show_more');
   }

@@ -107,6 +107,86 @@ body {
   z-index: 10;
 }
 
+.shopping {
+  position: relative;
+  max-height: 40px;
+
+  &-cart {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &-quantyty {
+    background-color: $LeafyGreen;
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $WhiteCol;
+    bottom: -5px;
+    right: -8px;
+    padding: 2px 6px;
+  }
+
+  &-list {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 100vh;
+    display: block;
+    transition: 0.3s;
+    background-color: $TransparentLeafyGreen;
+    transform: translateX(100%);
+    border-left: 2px solid $black;
+    backdrop-filter: blur(15px);
+    z-index: 1;
+    overflow-y: scroll;
+
+
+    & h1 {
+      margin: 21px 20px;
+    }
+
+    & .checkout {
+      position: sticky;
+      bottom: 0;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 20px;
+
+      & div {
+        background-color: $LightGrey;
+        width: 100%;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      & div:nth-child(2) {
+        background-color: $LeafyGreen;
+        color: $WhiteCol;
+        width: 100%;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.active-shopping {
+  transform: translateX(0);
+  backdrop-filter: blur(15px);
+}
+
 .btn {
   &-add_to_cart {
     width: 36px;
@@ -254,6 +334,11 @@ body {
     color: $LeafyGreen;
   }
 
+  &-numbOfProduct {
+    @extend .montserat;
+    font-size: 12px;
+  }
+
   &-Regular_black {
     @extend .montserat;
     font-size: 25px;
@@ -301,6 +386,11 @@ body {
     font-size: 20px;
     font-weight: 600;
     text-decoration: none;
+  }
+
+  &-cardLi {
+    @extend .montserat;
+    font-size: 18px;
   }
 }
 
@@ -397,33 +487,6 @@ body {
       backdrop-filter: blur(15px);
     }
   }
-
-  //   &-mini_form {
-  //     position: fixed;
-  //     top: 10%;
-  //     left: 12%;
-  //     width: 100%;
-  //     height: 35px;
-  //   }
-
-  //   &-label {
-  //     display: block;
-  //     width: 70%;
-  //   }
-
-  //   &-input {
-  //     width: 75%;
-  //     background-color: $Invisible ;
-  //     color: $black;
-  //     padding: 0 32px 4px 12px;
-  //     border-bottom: 2px solid $black;
-  //     outline: none;
-  //     font-size: 20px;
-
-  //     &::placeholder {
-  //         font-size: 18px;
-  //     }
-  //   }
 
   &-listst {
     width: 100%;
@@ -530,8 +593,8 @@ body {
     }
   }
   &-active {
-      color: $LeafyGreen;
-      text-decoration: underline;
+    color: $LeafyGreen;
+    text-decoration: underline;
   }
 }
 
@@ -575,8 +638,7 @@ body {
 
 // ------------------------------------------------------------------------------SECTION 6------------------------------------------------------------------------------
 
-
-.slick{
+.slick {
   &-slider {
     position: relative;
   }
@@ -595,7 +657,7 @@ body {
     width: 40px;
     height: 18px;
     margin-top: -9px;
-    
+
     &:hover {
       cursor: pointer;
     }
@@ -612,12 +674,9 @@ body {
         no-repeat;
     }
   }
-
 }
 
-
 // ------------------------------------------------------------------------------SECTION 7------------------------------------------------------------------------------
-
 
 .footer {
   background-color: $DarkerWhite;
@@ -670,7 +729,7 @@ body {
 .hide {
   opacity: 1;
   animation-name: a1;
-  animation-duration: .2s;
+  animation-duration: 0.2s;
   animation-fill-mode: forwards;
 }
 
@@ -682,5 +741,55 @@ body {
     padding: 0;
     margin: 0;
     border: 0;
+  }
+}
+
+.shopping-listCard {
+  & li {
+    height: 72px;
+    position: relative;
+    border-top: 1px solid $black;
+    border-bottom: 1px solid $black;
+    margin-bottom: 10px;
+    list-style-type: none;
+  }
+}
+
+.cart_list {
+  &-img {
+    height: 70px;
+    padding: 0 20px;
+  }
+
+  &-text_block {
+    position: absolute;
+    top: 13px;
+    left: 90px;
+  }
+
+  &-book_name{
+    max-width: 212px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  &-MrLss_block {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+  }
+
+  &-MrLss_block_style {
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 25px;
+  }
+
+  &-count {
+    font-size: 20px;
+    padding: 0 10px;
   }
 }

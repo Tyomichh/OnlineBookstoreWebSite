@@ -81,6 +81,78 @@ body {
   z-index: 10;
 }
 
+.shopping {
+  position: relative;
+  max-height: 40px;
+}
+.shopping-cart:hover {
+  cursor: pointer;
+}
+.shopping-quantyty {
+  background-color: #466042;
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f0f0f0;
+  bottom: -5px;
+  right: -8px;
+  padding: 2px 6px;
+}
+.shopping-list {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 100vh;
+  display: block;
+  transition: 0.3s;
+  background-color: rgba(77, 102, 73, 0.04);
+  transform: translateX(100%);
+  border-left: 2px solid #2c2c2c;
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  z-index: 1;
+  overflow-y: scroll;
+}
+.shopping-list h1 {
+  margin: 21px 20px;
+}
+.shopping-list .checkout {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 20px;
+}
+.shopping-list .checkout div {
+  background-color: #d7d7d7;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.shopping-list .checkout div:nth-child(2) {
+  background-color: #466042;
+  color: #f0f0f0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.active-shopping {
+  transform: translateX(0);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+}
+
 .btn-add_to_cart {
   width: 36px;
   height: 40px;
@@ -193,13 +265,16 @@ body {
   display: none;
 }
 
-.montserat, .montserat-footer, .montserat-sail, .montserat-SemiBold_black, .montserat-SemiBold_green, .montserat-SemiBold_black_main_title, .montserat-Regular_black_title, .montserat-Regular_green_small, .montserat-Regular_black, .montserat-Regular_green {
+.montserat, .montserat-cardLi, .montserat-footer, .montserat-sail, .montserat-SemiBold_black, .montserat-SemiBold_green, .montserat-SemiBold_black_main_title, .montserat-Regular_black_title, .montserat-Regular_green_small, .montserat-Regular_black, .montserat-numbOfProduct, .montserat-Regular_green {
   font-family: "Montserrat", sans-serif;
   font-size: 30px;
   font-weight: 400;
 }
 .montserat-Regular_green {
   color: #466042;
+}
+.montserat-numbOfProduct {
+  font-size: 12px;
 }
 .montserat-Regular_black {
   font-size: 25px;
@@ -233,6 +308,9 @@ body {
   font-size: 20px;
   font-weight: 600;
   text-decoration: none;
+}
+.montserat-cardLi {
+  font-size: 18px;
 }
 
 .inter, .inter-SemiBold_black, .inter-Light_black {
@@ -522,4 +600,44 @@ body {
     margin: 0;
     border: 0;
   }
+}
+.shopping-listCard li {
+  height: 72px;
+  position: relative;
+  border-top: 1px solid #2c2c2c;
+  border-bottom: 1px solid #2c2c2c;
+  margin-bottom: 10px;
+  list-style-type: none;
+}
+
+.cart_list-img {
+  height: 70px;
+  padding: 0 20px;
+}
+.cart_list-text_block {
+  position: absolute;
+  top: 13px;
+  left: 90px;
+}
+.cart_list-book_name {
+  max-width: 212px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.cart_list-MrLss_block {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+}
+.cart_list-MrLss_block_style {
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 25px;
+}
+.cart_list-count {
+  font-size: 20px;
+  padding: 0 10px;
 }/*# sourceMappingURL=style.css.map */

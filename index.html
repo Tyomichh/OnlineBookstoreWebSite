@@ -32,12 +32,6 @@
 
                         <nav class="menu-wrapper">
 
-                            <!-- <div class="menu-mini_form">
-                                <label class="menu-label montserat-SemiBold_black" for="">Which book do you want?</label>
-                                <input class="menu-input" type="text" placeholder="Fiction, or maybe historical?">
-                            </div> -->
-                            
-
                             <ul class="menu-list montserat">
                                 <li class="menu-listst"><a class="menu-list-link" href="#" data-scroll="#NEW">New</a></li>
                                 <li class="menu-listst"><a class="menu-list-link" href="#" data-scroll="#ABOUTUS">About us</a></li>
@@ -52,9 +46,24 @@
                         <i class="icon-Logo img-logo"></i>
                     </a>
 
-                    <a class="img-link" href="">
-                        <i class="icon-Cart img-main_sail_cart"></i>
-                    </a>
+                    <div class="shopping">
+                        <div class="shopping-cart">
+                            <i class="icon-Cart img-main_sail_cart"></i>
+                            <span class="shopping-quantyty montserat-numbOfProduct">0</span>
+                        </div>
+                            
+                        <div class="shopping-list">
+                            <h1 class="montserat-SemiBold_black">Cart</h1>
+                            <ul class="shopping-listCard">
+
+                            </ul>
+                            <div class="checkout">
+                                <div class="total montserat-Regular_black">0</div>
+                                <div class="clsShopping montserat-Regular_black">Close</div>
+                            </div>
+                        </div>
+                    </div>
+                    
                     
                 </nav>
 
@@ -99,7 +108,7 @@
 
                             <div class="price_blok">
                                 
-                                <p class="montserat-SemiBold_green">24$</p>
+                                <p class="montserat-SemiBold_green price">24$</p>
 
                                 <button class="btn-add_to_cart">
 
@@ -126,7 +135,7 @@
 
                             <div class="price_blok">
                                 
-                                <p class="montserat-SemiBold_green">32$</p>
+                                <p class="montserat-SemiBold_green price">32$</p>
 
                                 <button class="btn-add_to_cart">
 
@@ -208,7 +217,7 @@
 
                         <div class="price_blok">
                             
-                            <p class="montserat-SemiBold_green">15$</p>
+                            <p class="montserat-SemiBold_green price">15$</p>
 
                             <button class="btn-add_to_cart">
 
@@ -234,7 +243,7 @@
 
                         <div class="price_blok">
                             
-                            <p class="montserat-SemiBold_green">30$</p>
+                            <p class="montserat-SemiBold_green price">30$</p>
 
                             <button class="btn-add_to_cart">
 
@@ -260,7 +269,7 @@
 
                         <div class="price_blok">
                             
-                            <p class="montserat-SemiBold_green">28$</p>
+                            <p class="montserat-SemiBold_green price">28$</p>
 
                             <button class="btn-add_to_cart">
 
@@ -286,7 +295,7 @@
 
                         <div class="price_blok">
                             
-                            <p class="montserat-SemiBold_green">26$</p>
+                            <p class="montserat-SemiBold_green price">26$</p>
 
                             <button class="btn-add_to_cart">
 
@@ -297,8 +306,34 @@
                         </div>
 
                     </div>
+
+                    <div class="product-container-ctlg" id="history_tag">
+
+                        <div class="relative">
+                            <img class="img-sail_books" src="Images/Store_images/BetweenTwoWorlds_Book.png" alt="">
+                            <span class="montserat-Regular_green_small tag_by_id">history</span>
+                        </div>
+            
+                        <div class="spasing-book_author_name relative">
+                            <p class="montserat-Regular_black book_name">Between Two Worlds</p>
+                            <p class="montserat-SemiBold_black">Malcolm Gaskill</p>
+                        </div>
+            
+                        <div class="price_blok">
+                            
+                            <p class="montserat-SemiBold_green price">31$</p><span class="montserat-sail sail">45$</span>
+            
+                            <button class="btn-add_to_cart">
+            
+                                <i class="icon-Cart img-sail_cart"></i>
+            
+                            </button>
+            
+                        </div>
+            
+                    </div>
                     
-                    <div class="product-container-ctlg" id="fiction_tag">
+                    <div class="product-container-ctlg showLsScroll" id="fiction_tag">
 
                         <div class="relative">
                             <img class="img-sail_books" src="Images/Store_images/DoIKnowYou_Book.png" alt="">
@@ -312,7 +347,7 @@
 
                         <div class="price_blok">
                             
-                            <p class="montserat-SemiBold_green">17$</p>
+                            <p class="montserat-SemiBold_green price">17$</p>
 
                             <button class="btn-add_to_cart">
 
@@ -324,7 +359,7 @@
 
                     </div>
 
-                    <div class="product-container-ctlg showLsScroll" id="fiction_tag">
+                    <div class="product-container-ctlg" id="fiction_tag">
 
                         <div class="relative">
                             <img class="img-sail_books" src="Images/Store_images/Hourglass_Book.png" alt="">
@@ -338,7 +373,7 @@
 
                         <div class="price_blok">
                             
-                            <p class="montserat-SemiBold_green">24$</p>
+                            <p class="montserat-SemiBold_green price">24$</p>
 
                             <button class="btn-add_to_cart">
 
@@ -364,7 +399,7 @@
 
                         <div class="price_blok">
                             
-                            <p class="montserat-SemiBold_green">45$</p>
+                            <p class="montserat-SemiBold_green price">45$</p>
 
                             <button class="btn-add_to_cart">
 
@@ -374,6 +409,32 @@
 
                         </div>
 
+                    </div>
+
+                    <div class="product-container-ctlg showLsScroll" id="business&finance_tag">
+
+                        <div class="relative">
+                            <img class="img-sail_books" src="Images/Store_images/ImpactWithIntegrity_Book.png" alt="">
+                            <span class="montserat-Regular_green_small tag_by_id">business&finance</span>
+                        </div>
+            
+                        <div class="spasing-book_author_name relative">
+                            <p class="montserat-Regular_black book_name">Impact With Integrity</p>
+                            <p class="montserat-SemiBold_black">Becky Margiotta</p>
+                        </div>
+            
+                        <div class="price_blok">
+                            
+                            <p class="montserat-SemiBold_green price">19$</p><span class="montserat-sail sail">28$</span>
+            
+                            <button class="btn-add_to_cart">
+            
+                                <i class="icon-Cart img-sail_cart"></i>
+            
+                            </button>
+            
+                        </div>
+            
                     </div>
 
                     <div class="product-container-ctlg" id="fiction_tag">
@@ -391,7 +452,7 @@
 
                         <div class="price_blok">
                             
-                            <p class="montserat-SemiBold_green">32$</p>
+                            <p class="montserat-SemiBold_green price">32$</p>
 
                             <button class="btn-add_to_cart">
 
@@ -403,7 +464,7 @@
 
                     </div>
 
-                    <div class="product-container-ctlg showLsScroll" id="philosophy_tag">
+                    <div class="product-container-ctlg" id="philosophy_tag">
 
                         <div class="relative">
                             <img class="img-sail_books" src="Images/Store_images/MindsMakeSocieties_Book.png" alt="">
@@ -417,7 +478,33 @@
 
                         <div class="price_blok">
                             
-                            <p class="montserat-SemiBold_green">23$</p>
+                            <p class="montserat-SemiBold_green price">23$</p>
+
+                            <button class="btn-add_to_cart">
+
+                                <i class="icon-Cart img-sail_cart"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="product-container-ctlg showLsScroll" id="non-fiction_tag">
+
+                        <div class="relative">
+                            <img class="img-sail_books" src="Images/Store_images/Reckoning_Book.png" alt="">
+                            <span class="montserat-Regular_green_small tag_by_id">non-fiction</span>
+                        </div>
+
+                        <div class="spasing-book_author_name relative">
+                            <p class="montserat-Regular_black book_name">Reckoning</p>
+                            <p class="montserat-SemiBold_black">Eve Ensler</p>
+                        </div>
+
+                        <div class="price_blok">
+                            
+                            <p class="montserat-SemiBold_green price">19$</p>
 
                             <button class="btn-add_to_cart">
 
@@ -432,27 +519,27 @@
                     <div class="product-container-ctlg" id="non-fiction_tag">
 
                         <div class="relative">
-                            <img class="img-sail_books" src="Images/Store_images/Reckoning_Book.png" alt="">
+                            <img class="img-sail_books" src="Images/Store_images/FindingMe_Book.png" alt="">
                             <span class="montserat-Regular_green_small tag_by_id">non-fiction</span>
                         </div>
-
+            
                         <div class="spasing-book_author_name relative">
-                            <p class="montserat-Regular_black book_name">Reckoning</p>
-                            <p class="montserat-SemiBold_black">Eve Ensler</p>
+                            <p class="montserat-Regular_black book_name">Finding Me</p>
+                            <p class="montserat-SemiBold_black">Viola Davis</p>
                         </div>
-
+            
                         <div class="price_blok">
                             
-                            <p class="montserat-SemiBold_green">19$</p>
-
+                            <p class="montserat-SemiBold_green price">28$</p><span class="montserat-sail sail">32$</span>
+            
                             <button class="btn-add_to_cart">
-
+            
                                 <i class="icon-Cart img-sail_cart"></i>
-
+            
                             </button>
-
+            
                         </div>
-
+            
                     </div>
                     
                     <div class="product-container-ctlg" id="psychology_tag">
@@ -469,7 +556,7 @@
 
                         <div class="price_blok">
                             
-                            <p class="montserat-SemiBold_green">45$</p>
+                            <p class="montserat-SemiBold_green price">45$</p>
 
                             <button class="btn-add_to_cart">
 
@@ -495,7 +582,7 @@
 
                         <div class="price_blok">
                             
-                            <p class="montserat-SemiBold_green">12$</p>
+                            <p class="montserat-SemiBold_green price">12$</p>
 
                             <button class="btn-add_to_cart">
 
@@ -513,7 +600,7 @@
             </div>
 
         </section>
-
+        
         <!-- SECTION 5 -->
         <section class="spasing-general">
 
@@ -560,7 +647,7 @@
 
                             <div class="price_blok">
                                 
-                                <p class="montserat-SemiBold_green">19$</p><span class="montserat-sail sail">28$</span>
+                                <p class="montserat-SemiBold_green price">19$</p><span class="montserat-sail sail">28$</span>
 
                                 <button class="btn-add_to_cart">
 
@@ -588,7 +675,7 @@
 
                             <div class="price_blok">
                                 
-                                <p class="montserat-SemiBold_green">31$</p><span class="montserat-sail sail">45$</span>
+                                <p class="montserat-SemiBold_green price">31$</p><span class="montserat-sail sail">45$</span>
 
                                 <button class="btn-add_to_cart">
 
@@ -616,7 +703,7 @@
 
                             <div class="price_blok">
                                 
-                                <p class="montserat-SemiBold_green">28$</p><span class="montserat-sail sail">32$</span>
+                                <p class="montserat-SemiBold_green price">28$</p><span class="montserat-sail sail">32$</span>
 
                                 <button class="btn-add_to_cart">
 
@@ -644,7 +731,7 @@
 
                             <div class="price_blok">
                                 
-                                <p class="montserat-SemiBold_green">19$</p><span class="montserat-sail sail">28$</span>
+                                <p class="montserat-SemiBold_green price">19$</p><span class="montserat-sail sail">28$</span>
 
                                 <button class="btn-add_to_cart">
 
@@ -672,7 +759,7 @@
 
                             <div class="price_blok">
                                 
-                                <p class="montserat-SemiBold_green">31$</p><span class="montserat-sail sail">45$</span>
+                                <p class="montserat-SemiBold_green price">31$</p><span class="montserat-sail sail">45$</span>
 
                                 <button class="btn-add_to_cart">
 
@@ -700,7 +787,7 @@
 
                             <div class="price_blok">
                                 
-                                <p class="montserat-SemiBold_green">28$</p><span class="montserat-sail sail">32$</span>
+                                <p class="montserat-SemiBold_green price">28$</p><span class="montserat-sail sail">32$</span>
 
                                 <button class="btn-add_to_cart">
 
