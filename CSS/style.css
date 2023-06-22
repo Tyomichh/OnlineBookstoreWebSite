@@ -104,7 +104,7 @@ body {
   position: fixed;
   top: 0;
   right: 0;
-  width: 400px;
+  width: 432px;
   height: 100vh;
   display: block;
   transition: 0.3s;
@@ -115,6 +115,9 @@ body {
           backdrop-filter: blur(15px);
   z-index: 1;
   overflow-y: scroll;
+}
+.shopping-list::-webkit-scrollbar {
+  width: 2em;
 }
 .shopping-list h1 {
   margin: 21px 20px;
@@ -148,9 +151,7 @@ body {
 }
 
 .active-shopping {
-  transform: translateX(0);
-  -webkit-backdrop-filter: blur(15px);
-          backdrop-filter: blur(15px);
+  transform: translateX(9%);
 }
 
 .btn-add_to_cart {
@@ -630,7 +631,7 @@ body {
   position: absolute;
   align-items: center;
   top: 50%;
-  right: 5%;
+  right: 8%;
   transform: translateY(-50%);
 }
 .cart_list-MrLss_block_style {

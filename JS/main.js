@@ -112,8 +112,26 @@ function reloadCard() {
   quantyty.innerText = count;
 }
 
-function changeQuantity(params) {
-  
+function changeQuantity(key, quantyty) {
+  if (quantyty == 0){
+    delete listCards[key];
+  }
+  else {
+    listCards[key].quantyty = quantyty;
+    listCards[key].price = quantyty * products[key].price;
+
+
+
+    //щоб можна було додавати товари повторно натискаючи на корзину
+    //щоб правильно рахувало
+    //щоб можна було додавати товари не тільки з product-container-ctlg
+    // коли більше 11 лішок блоку чекаут видається position: sticky
+
+
+
+    
+  }
+  reloadCard();
 }
 
 const addToCartButtons = document.querySelectorAll('.btn-add_to_cart');

@@ -134,7 +134,7 @@ body {
     position: fixed;
     top: 0;
     right: 0;
-    width: 400px;
+    width: 432px;
     height: 100vh;
     display: block;
     transition: 0.3s;
@@ -144,6 +144,9 @@ body {
     backdrop-filter: blur(15px);
     z-index: 1;
     overflow-y: scroll;
+    &::-webkit-scrollbar {
+      width: 2em;
+    }
 
 
     & h1 {
@@ -183,8 +186,7 @@ body {
 }
 
 .active-shopping {
-  transform: translateX(0);
-  backdrop-filter: blur(15px);
+  transform: translateX(9%);
 }
 
 .btn {
@@ -779,7 +781,7 @@ body {
     position: absolute;
     align-items: center;
     top: 50%;
-    right: 5%;
+    right: 8%;
     transform: translateY(-50%);
   }
 
