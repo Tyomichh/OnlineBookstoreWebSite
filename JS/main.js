@@ -16,45 +16,32 @@ $(document).on('click', e => {
 });
 
 
+const addToCartButtons = $('.btn-add_to_cart');
+addToCartButtons.each(function() {
+  $(this).on('click', function() {
+    const key = $(this).closest('.productCART').attr('data-key');
+    AddToCart(key);
+  });
+});
 
 
+$('.shopping-cart').on('click', function() {
+  $('.shopping-list').addClass('active-shopping');
+});
 
+$('.clsShopping').on('click', function() {
+  $('.shopping-list').removeClass('active-shopping');
+});
 
-
-const shopping = document.querySelector('.shopping-cart'),//SHOPPING = SHOPPING
-  shplist = document.querySelector('.shopping-list'),// CARD = shplist
-  cls = document.querySelector('.clsShopping');// Closehopping = cls
-
-shopping.addEventListener('click', () => {
-  shplist.classList.add('active-shopping');
-})
-cls.addEventListener('click', () => {
-  shplist.classList.remove('active-shopping');
-})
-
-
-// // Оновлюємо кількість товарів у корзині
-// const currentQuantity = parseInt(shoppingQuantity.textContent);
-// shoppingQuantity.textContent = currentQuantity + 1;
-
-const productContainers = Array.from(document.querySelectorAll('.product-container-ctlg'));
+const productContainers = Array.from(document.querySelectorAll('.productCART'));
 let products = [];
-let encounteredNames = {};
-let quantyty = document.querySelector('.shopping-quantyty');// QUANTYTY = QUANTYTY
-let listCard = document.querySelector('.shopping-listCard');//LISTCARD = LISTCARD
-let total = document.querySelector('.total');//TOTAL = TOTAL
-//LIST = product-container-ctlg
+let quantyty = document.querySelector('.shopping-quantyty');
+let listCard = document.querySelector('.shopping-listCard');
+let total = document.querySelector('.total');
+let listCards = [];
 
-productContainers.forEach((container, index) => {
+productContainers.forEach(function(container, index) {
   const name = container.querySelector('.book_name').textContent;
-
-  // Перевірка на унікальність назви
-  if (encounteredNames[name]) {
-    return; // Якщо назва вже зустрічалася, пропускаємо поточний елемент
-  }
-
-  encounteredNames[name] = true;
-
   const image = container.querySelector('img').getAttribute('src');
   const price = parseFloat(container.querySelector('.montserat-SemiBold_green').textContent);
 
@@ -62,21 +49,19 @@ productContainers.forEach((container, index) => {
     numbr: index + 1,
     name: name,
     image: image,
-    price: price,
+    price: Object.freeze(price), // Застосовуємо Object.freeze для забезпечення незмінності
   };
 
   container.setAttribute('data-key', index);
 
   products.push(product);
 });
-let listCards = [];
 
 console.log(products);
 
 function AddToCart(key) {
   if (listCards[key] == null) {
-    listCards[key] = products[key];
-    listCards[key].quantyty = 1;
+    listCards[key] = { ...products[key], quantyty: 1 }; // Використовуємо розширений синтаксис об'єкта для копіювання значень і додавання нового властивості quantyty
   }
   reloadCard();
 }
@@ -85,6 +70,7 @@ function reloadCard() {
   listCard.innerHTML = '';
   let count = 0;
   let totalPrice = 0;
+
   listCards.forEach((value, key) => {
     totalPrice = totalPrice + value.price;
     count = count + value.quantyty;
@@ -93,51 +79,57 @@ function reloadCard() {
       let newDiv = document.createElement('li');
 
       newDiv.innerHTML = `
-    <img class="cart_list-img" src="${value.image}">
-    <div class="cart_list-text_block montserat-cardLi">
-      <div class="cart_list-book_name">${value.name}</div>
-      <div>${value.price.toLocaleString()}$</div>
-    </div>
-    <div class="cart_list-MrLss_block montserat-cardLi">
-      <button class="cart_list-MrLss_block_style" onclick="changeQuantity(${key},${value.quantyty - 1})">-</button>
-      <div class="cart_list-count">${value.quantyty}</div>
-      <button class="cart_list-MrLss_block_style" onclick="changeQuantity(${key},${value.quantyty + 1})">+</button>
-     </div>`
+        <img class="cart_list-img" src="${value.image}">
+        <div class="cart_list-text_block montserat-cardLi">
+          <div class="cart_list-book_name">${value.name}</div>
+          <div>${value.price.toLocaleString()}$</div>
+        </div>
+        <div class="cart_list-MrLss_block montserat-cardLi">
+          <button class="cart_list-MrLss_block_style" onclick="changeQuantity(${key},${value.quantyty - 1})">-</button>
+          <div class="cart_list-count">${value.quantyty}</div>
+          <button class="cart_list-MrLss_block_style pluss" onclick="changeQuantity(${key},${value.quantyty + 1})">+</button>
+        </div>`;
 
       listCard.appendChild(newDiv);
     }
-  })
+  });
 
   total.innerText = totalPrice.toLocaleString();
   quantyty.innerText = count;
 }
 
 function changeQuantity(key, quantyty) {
-  if (quantyty == 0){
+  if (quantyty === 0) {
     delete listCards[key];
-  }
-  else {
+  } else if (quantyty <= 9) {
     listCards[key].quantyty = quantyty;
     listCards[key].price = quantyty * products[key].price;
-
-
-
-    //щоб можна було додавати товари повторно натискаючи на корзину
-    //щоб правильно рахувало
-    //щоб можна було додавати товари не тільки з product-container-ctlg
-    // коли більше 11 лішок блоку чекаут видається position: sticky
-
-
-
-    
+  } else {
+    listCards[key].quantyty = 9;
+    listCards[key].price = 9 * products[key].price;
   }
   reloadCard();
 }
 
-const addToCartButtons = document.querySelectorAll('.btn-add_to_cart');
-addToCartButtons.forEach((button) => {
-  button.setAttribute('onclick', `AddToCart(this.closest('.product-container-ctlg').getAttribute('data-key'))`);
-})
+
+
+$(document).ready(function() {
+  updateStickyPosition();
+
+  $('.shopping-listCard').bind('DOMSubtreeModified', function() {
+    updateStickyPosition();
+  });
+
+  function updateStickyPosition() {
+    var liCount = $('.shopping-listCard li').length;
+  
+    if (liCount > 10) {
+      $('.checkout').css('position', 'sticky');
+    } else {
+      $('.checkout').css('position', 'absolute');
+    }
+  }
+});
 
 
 

@@ -135,7 +135,7 @@ body {
     top: 0;
     right: 0;
     width: 432px;
-    height: 100vh;
+    height: -webkit-fill-available;
     display: block;
     transition: 0.3s;
     background-color: $TransparentLeafyGreen;
@@ -148,13 +148,12 @@ body {
       width: 2em;
     }
 
-
     & h1 {
       margin: 21px 20px;
     }
 
     & .checkout {
-      position: sticky;
+      position: absolute;
       bottom: 0;
       width: 100%;
       display: grid;
@@ -476,7 +475,7 @@ body {
     top: 0;
     left: 0;
     width: 400px;
-    height: 100vh;
+    height: -webkit-fill-available;
     display: block;
     transition: 0.3s;
     flex-direction: column;
@@ -654,7 +653,6 @@ body {
   &-arrow {
     position: absolute;
     top: 50%;
-    z-index: 100;
     font-size: 0;
     width: 40px;
     height: 18px;
@@ -769,7 +767,7 @@ body {
     left: 90px;
   }
 
-  &-book_name{
+  &-book_name {
     max-width: 212px;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -788,6 +786,10 @@ body {
   &-MrLss_block_style {
     background-color: rgba(0, 0, 0, 0);
     font-size: 25px;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &-count {

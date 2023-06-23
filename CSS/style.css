@@ -105,7 +105,7 @@ body {
   top: 0;
   right: 0;
   width: 432px;
-  height: 100vh;
+  height: -webkit-fill-available;
   display: block;
   transition: 0.3s;
   background-color: rgba(77, 102, 73, 0.04);
@@ -123,7 +123,7 @@ body {
   margin: 21px 20px;
 }
 .shopping-list .checkout {
-  position: sticky;
+  position: absolute;
   bottom: 0;
   width: 100%;
   display: grid;
@@ -379,7 +379,7 @@ body {
   top: 0;
   left: 0;
   width: 400px;
-  height: 100vh;
+  height: -webkit-fill-available;
   display: block;
   transition: 0.3s;
   flex-direction: column;
@@ -527,7 +527,6 @@ body {
 .slick-arrow {
   position: absolute;
   top: 50%;
-  z-index: 100;
   font-size: 0;
   width: 40px;
   height: 18px;
@@ -637,6 +636,9 @@ body {
 .cart_list-MrLss_block_style {
   background-color: rgba(0, 0, 0, 0);
   font-size: 25px;
+}
+.cart_list-MrLss_block_style:hover {
+  cursor: pointer;
 }
 .cart_list-count {
   font-size: 20px;
