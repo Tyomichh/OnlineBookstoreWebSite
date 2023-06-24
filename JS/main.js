@@ -16,6 +16,18 @@ $(document).on('click', e => {
 });
 
 
+
+const productContainers = Array.from(document.querySelectorAll('.productCART'));
+let products = [];
+let quantyty = document.querySelector('.shopping-quantyty');
+let listCard = document.querySelector('.shopping-listCard');
+let total = document.querySelector('.total');
+let listCards = [];
+const closeButton = document.querySelector('.close-button');
+const popupOverlay = document.querySelector('.popup-overlay');
+const amountInput = document.getElementById("amount");
+const cardNumberInput = document.getElementById('card-number');
+
 const addToCartButtons = $('.btn-add_to_cart');
 addToCartButtons.each(function() {
   $(this).on('click', function() {
@@ -23,7 +35,6 @@ addToCartButtons.each(function() {
     AddToCart(key);
   });
 });
-
 
 $('.shopping-cart').on('click', function() {
   $('.shopping-list').addClass('active-shopping');
@@ -33,12 +44,36 @@ $('.clsShopping').on('click', function() {
   $('.shopping-list').removeClass('active-shopping');
 });
 
-const productContainers = Array.from(document.querySelectorAll('.productCART'));
-let products = [];
-let quantyty = document.querySelector('.shopping-quantyty');
-let listCard = document.querySelector('.shopping-listCard');
-let total = document.querySelector('.total');
-let listCards = [];
+$('.total').on('click', function() {
+  popupOverlay.style.opacity = '1';
+  popupOverlay.style.zIndex = '1';
+  const payButton = document.querySelector('.pay-button');
+
+  if (amountInput.value <= 0) {
+    payButton.classList.add('wrong_amount');
+  } else {
+    payButton.classList.remove('wrong_amount');
+  }
+});
+
+cardNumberInput.addEventListener('input', function(e) {
+  let value = e.target.value.replace(/\s/g, '');
+  let formattedValue = '';
+
+  for (let i = 0; i < value.length; i++) {
+    if (i > 0 && i % 4 === 0) {
+      formattedValue += ' ';
+    }
+    formattedValue += value[i];
+  }
+
+  e.target.value = formattedValue;
+});
+
+closeButton.addEventListener('click', function() {
+  popupOverlay.style.opacity = '0';
+  popupOverlay.style.zIndex = '-1';
+});
 
 productContainers.forEach(function(container, index) {
   const name = container.querySelector('.book_name').textContent;
@@ -72,8 +107,8 @@ function reloadCard() {
   let totalPrice = 0;
 
   listCards.forEach((value, key) => {
-    totalPrice = totalPrice + value.price;
-    count = count + value.quantyty;
+    totalPrice += value.price;
+    count += value.quantyty;
 
     if (value != null) {
       let newDiv = document.createElement('li');
@@ -87,7 +122,7 @@ function reloadCard() {
         <div class="cart_list-MrLss_block montserat-cardLi">
           <button class="cart_list-MrLss_block_style" onclick="changeQuantity(${key},${value.quantyty - 1})">-</button>
           <div class="cart_list-count">${value.quantyty}</div>
-          <button class="cart_list-MrLss_block_style pluss" onclick="changeQuantity(${key},${value.quantyty + 1})">+</button>
+          <button class="cart_list-MrLss_block_style pluss ${value.quantyty === 9 ? 'hide' : ''}" onclick="changeQuantity(${key},${value.quantyty + 1})">+</button>
         </div>`;
 
       listCard.appendChild(newDiv);
@@ -96,6 +131,7 @@ function reloadCard() {
 
   total.innerText = totalPrice.toLocaleString();
   quantyty.innerText = count;
+  amountInput.value = totalPrice.toLocaleString();
 }
 
 function changeQuantity(key, quantyty) {
