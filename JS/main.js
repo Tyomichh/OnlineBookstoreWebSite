@@ -25,38 +25,41 @@ let total = document.querySelector('.total');
 let listCards = [];
 const closeButton = document.querySelector('.close-button');
 const popupOverlay = document.querySelector('.popup-overlay');
+const popupForm = document.querySelector('#payment-form');
 const amountInput = document.getElementById("amount");
 const cardNumberInput = document.getElementById('card-number');
 
 const addToCartButtons = $('.btn-add_to_cart');
-addToCartButtons.each(function() {
-  $(this).on('click', function() {
+addToCartButtons.each(function () {
+  $(this).on('click', function () {
     const key = $(this).closest('.productCART').attr('data-key');
     AddToCart(key);
   });
 });
 
-$('.shopping-cart').on('click', function() {
+$('.shopping-cart').on('click', function () {
   $('.shopping-list').addClass('active-shopping');
 });
 
-$('.clsShopping').on('click', function() {
+$('.clsShopping').on('click', function () {
   $('.shopping-list').removeClass('active-shopping');
 });
 
-$('.total').on('click', function() {
+$('.total').on('click', function () {
   popupOverlay.style.opacity = '1';
   popupOverlay.style.zIndex = '1';
   const payButton = document.querySelector('.pay-button');
 
   if (amountInput.value <= 0) {
+    popupForm.style.pointerEvents = 'none';
     payButton.classList.add('wrong_amount');
   } else {
+    popupForm.style.pointerEvents = 'auto';
     payButton.classList.remove('wrong_amount');
   }
 });
 
-cardNumberInput.addEventListener('input', function(e) {
+cardNumberInput.addEventListener('input', function (e) {
   let value = e.target.value.replace(/\s/g, '');
   let formattedValue = '';
 
@@ -70,12 +73,12 @@ cardNumberInput.addEventListener('input', function(e) {
   e.target.value = formattedValue;
 });
 
-closeButton.addEventListener('click', function() {
+closeButton.addEventListener('click', function () {
   popupOverlay.style.opacity = '0';
   popupOverlay.style.zIndex = '-1';
 });
 
-productContainers.forEach(function(container, index) {
+productContainers.forEach(function (container, index) {
   const name = container.querySelector('.book_name').textContent;
   const image = container.querySelector('img').getAttribute('src');
   const price = parseFloat(container.querySelector('.montserat-SemiBold_green').textContent);
@@ -147,18 +150,45 @@ function changeQuantity(key, quantyty) {
   reloadCard();
 }
 
+$('.pay-button').on('click', function (event) {
+  const payButton = $(this);
+  const spinnerLoader = $('<div class="spinner-loader"></div>');
+  const cardNumberInput = $('#card-number');
+  const expiryDateInput = $('#expiry-date');
+  const cvvInput = $('#cvv');
+
+  event.preventDefault()
+
+  if (cardNumberInput.val().length >= 16 && expiryDateInput.val().length >= 5 && cvvInput.val().length >= 4) {
+    payButton.hide();
+    payButton.after(spinnerLoader);
+
+    setTimeout(function () {
+      for (let key in listCards) {
+        listCards[key].quantyty = 0;
+      }
+
+      popupForm.submit();
+    }, 1000);
+
+  } else {
+    alert('Please fill in all fields correctly.');
+  }
+});
 
 
-$(document).ready(function() {
+
+
+$(document).ready(function () {
   updateStickyPosition();
 
-  $('.shopping-listCard').bind('DOMSubtreeModified', function() {
+  $('.shopping-listCard').bind('DOMSubtreeModified', function () {
     updateStickyPosition();
   });
 
   function updateStickyPosition() {
     var liCount = $('.shopping-listCard li').length;
-  
+
     if (liCount > 10) {
       $('.checkout').css('position', 'sticky');
     } else {
