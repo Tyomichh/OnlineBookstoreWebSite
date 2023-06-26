@@ -945,3 +945,35 @@ body {
   100% { transform: rotate(360deg); }
 }
 
+
+
+
+@media screen and (max-width: 1350px) {
+
+  .container {
+    max-width: 1170px;
+    height: auto;
+    margin: 0 auto;
+  
+    &-bigger {
+      max-width: 1350px;
+      @extend .container;
+    }
+  
+    &-first_section {
+      height: 900px;
+      @extend .container;
+    }
+  
+    &-second_section {
+      height: 836px;
+      @extend .container;
+    }
+  
+    &-slider {
+      max-width: 1210px;
+      @extend .container;
+    }
+  }
+
+}
