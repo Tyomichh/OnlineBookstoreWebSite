@@ -61,6 +61,8 @@ body {
 }
 .spasing-slider {
   margin: 20px 16px 40px 16px;
+  display: flex;
+  justify-content: center;
 }
 
 .book_name {
@@ -164,6 +166,14 @@ body {
 .btn-container {
   display: flex;
   align-items: center;
+  position: relative;
+  max-width: 390px;
+  width: 100%;
+  height: 675px;
+  padding: 48px;
+  background-color: #f0f0f0;
+  transition: transform 0.2s linear;
+  filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.25));
 }
 .btn-container:hover {
   cursor: pointer;
@@ -230,6 +240,11 @@ body {
 .img-logo {
   font-size: 40px;
   color: #2c2c2c;
+}
+.img-advert {
+  max-width: 720px;
+  height: 400px;
+  width: 100%;
 }
 
 .paragraf-rotate2023 {
@@ -784,5 +799,57 @@ body {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+@media screen and (max-width: 1365px) {
+  .container, .container-bigger, .container-first_section, .container-second_section, .container-slider {
+    max-width: 990px;
+    height: auto;
+    margin: 0 auto;
+  }
+  .container-bigger {
+    max-width: 1170px;
+  }
+  .container-first_section {
+    height: 900px;
+  }
+  .container-second_section {
+    height: 836px;
+  }
+  .container-slider {
+    max-width: 930px;
+  }
+  .btn-container {
+    position: absolute;
+    bottom: 0;
+    width: 120px;
+    height: 0;
+    padding: 0;
+    background-color: none;
+    transition: none;
+    filter: none;
+    cursor: pointer;
+  }
+  .catalog-nav {
+    flex-wrap: wrap;
+  }
+  .paragraf-shopAll {
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+    font-size: 30px;
+    text-decoration: underline;
+    text-transform: lowercase;
+  }
+  .paragraf-shopAll:hover {
+    color: #466042;
+  }
+  .product-columns {
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    position: relative;
+    padding-bottom: 50px;
+  }
+  .img-arrow {
+    display: none;
   }
 }/*# sourceMappingURL=style.css.map */

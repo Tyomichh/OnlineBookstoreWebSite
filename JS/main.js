@@ -339,6 +339,33 @@ $('.block_slider').slick({
   centerMode: true,
   variableWidth: true,
   adaptiveHeight: false,
-  initialSlide: 1
+  initialSlide: 1,
+  responsive: [
+    {
+      breakpoint: 1366,
+      settings: {
+        slidesToShow: 2,
+        centerMode: false,
+        variableWidth: false,
+      }
+    }
+    // {
+    //   breakpoint: 600,
+    //   settings: {
+    //     slidesToShow: 2,
+    //     slidesToScroll: 2
+    //   }
+    // },
+    // {
+    //   breakpoint: 480,
+    //   settings: {
+    //     slidesToShow: 1,
+    //     slidesToScroll: 1
+    //   }
+    // }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
 });
 
