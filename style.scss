@@ -291,12 +291,8 @@ body {
   &-logo {
     font-size: 40px;
     color: $black;
-  }
-
-  &-advert {
-    max-width: 720px;
-    height: 400px;
-    width: 100%;
+    float: left;
+    margin-right: 110px;
   }
 }
 
@@ -330,7 +326,7 @@ body {
 .info {
   &-about_us_gr {
     display: grid;
-    grid-template-columns: 1.3fr 0.9fr 1fr 1fr 1.2fr;
+    grid-template-columns: 0.6fr 0.6fr 0.6fr 0.8fr;
     grid-column-gap: 30px;
     text-align: center;
   }
@@ -640,6 +636,7 @@ body {
     &:nth-child(2) {
       border: 1px solid $TransparentGrey;
       border-left: none;
+      overflow: hidden;
     }
   }
 
@@ -967,65 +964,133 @@ body {
 @media screen and (max-width: 1365px) {
   .container {
     max-width: 990px;
-    height: auto;
-    margin: 0 auto;
 
     &-bigger {
-      max-width: 1170px;
-      @extend .container;
-    }
-
-    &-first_section {
-      height: 900px;
-      @extend .container;
-    }
-
-    &-second_section {
-      height: 836px;
-      @extend .container;
+      max-width: 1050px;
     }
 
     &-slider {
       max-width: 930px;
-      @extend .container;
     }
   }
 
-  .btn-container {
-    position: absolute;
-    bottom: 0;
-    width: 120px;
-    height: 0;
-    padding: 0;
-    background-color: none;
-    transition: none;
-    filter: none;
-    cursor: pointer;
-  }
-
-  .catalog-nav {
-    flex-wrap: wrap;
-  }
-
-  .paragraf-shopAll {
-    font-weight: 600;
-    font-family: "Montserrat", sans-serif;
-    font-size: 30px;
-    text-decoration: underline;
-    &:hover {
-      color: $LeafyGreen;
+  .btn {
+    &-container {
+      position: absolute;
+      bottom: 0;
+      width: 120px;
+      height: 0;
+      padding: 0;
+      background-color: none;
+      transition: none;
+      filter: none;
+      cursor: pointer;
     }
-    text-transform: lowercase;
+  }
+  .catalog {
+    &-nav {
+      flex-wrap: wrap;
+    }
   }
 
-  .product-columns {
-    grid-template-columns: 1fr 1fr;
-    justify-items: center;
-    position: relative;
-    padding-bottom: 50px;
+  .paragraf {
+    &-shopAll {
+      font-weight: 600;
+      font-family: "Montserrat", sans-serif;
+      font-size: 30px;
+      text-decoration: underline;
+      &:hover {
+        color: $LeafyGreen;
+      }
+      text-transform: lowercase;
+    }
   }
 
-  .img-arrow {
-    display: none;
+  .product {
+    &-columns {
+      grid-template-columns: 1fr 1fr;
+      justify-items: center;
+      position: relative;
+      padding-bottom: 50px;
+    }
   }
+
+  .img {
+    &-arrow {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 1065px) {
+  .container {
+    max-width: 665px;
+
+    &-bigger {
+      max-width: 765px;
+    }
+
+    &-slider {
+      max-width: 760px;
+    }
+  }
+
+  .info {
+    &-about_us_gr {
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      grid-template-rows: 1fr 1fr;
+      align-items: center;
+    }
+  }
+
+  .img {
+    &-books_branch {
+      height: 690px;
+    }
+  }
+
+  .product {
+    &-columns {
+      grid-row-gap: 50px;
+      gap: 30px;
+    }
+  }
+  .product {
+    &-container,
+    &-container-ctlg {
+      max-width: 320px;
+      width: 100%;
+      height: 570px;
+      padding: 45px;
+    }
+  }
+  .img {
+    &-sail_books {
+      max-width: 240px;
+      max-height: 335px;
+    }
+  }
+  .spasing {
+    &-book_author_name {
+      margin: 50px 0 37px 0;
+    }
+  }
+
+  .price_blok {
+    grid-column-gap: 150px;
+  }
+
+  .book_name {
+    width: 244px;
+  }
+
+  .advertising_block {
+    &-paragraph {
+      max-width: 400px;
+    }
+  }
+}
+
+@media screen and (max-width: 840px) {
 }
