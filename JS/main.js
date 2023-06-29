@@ -79,7 +79,7 @@ closeButton.addEventListener('click', function () {
 });
 
 productContainers.forEach(function (container, index) {
-  const name = container.querySelector('.book_name').textContent;
+  const name = container.querySelector('.name-book').textContent;
   const image = container.querySelector('img').getAttribute('src');
   const price = parseFloat(container.querySelector('.montserat-SemiBold_green').textContent);
 
@@ -342,20 +342,20 @@ $('.block_slider').slick({
   initialSlide: 1,
   responsive: [
     {
-      breakpoint: 1366,
+      breakpoint: 1431,
       settings: {
         slidesToShow: 2,
         centerMode: false,
         variableWidth: false,
       }
-    }
-    // {
-    //   breakpoint: 600,
-    //   settings: {
-    //     slidesToShow: 2,
-    //     slidesToScroll: 2
-    //   }
-    // },
+    },
+    {
+      breakpoint: 841,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    },
     // {
     //   breakpoint: 480,
     //   settings: {

@@ -68,7 +68,7 @@ body {
   }
 
   &-slider {
-    max-width: 1210px;
+    max-width: 1298px;
     @extend .container;
   }
 }
@@ -92,14 +92,22 @@ body {
   }
 }
 
-.book_name {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  position: absolute;
-  width: 300px;
-  height: 29px;
-  top: -30px;
+.name {
+  &-book {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    width: 300px;
+    top: -30px;
+  }
+
+  &-author {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 300px;
+  }
 }
 
 .tag_by_id {
@@ -625,7 +633,6 @@ body {
   }
 
   &-column {
-    max-width: 720px;
     width: 100%;
     max-height: 402px;
     position: relative;
@@ -641,7 +648,6 @@ body {
   }
 
   &-paragraph {
-    max-width: 442px;
     width: 100%;
     position: absolute;
     top: 50%;
@@ -961,7 +967,7 @@ body {
   }
 }
 
-@media screen and (max-width: 1365px) {
+@media screen and (max-width: 1430px) {
   .container {
     max-width: 990px;
 
@@ -1045,6 +1051,11 @@ body {
   }
 
   .img {
+    &-sail_books {
+      max-width: 230px;
+      max-height: 316px;
+    }
+
     &-books_branch {
       height: 690px;
     }
@@ -1081,16 +1092,217 @@ body {
     grid-column-gap: 150px;
   }
 
-  .book_name {
+  .name-book {
     width: 244px;
-  }
-
-  .advertising_block {
-    &-paragraph {
-      max-width: 400px;
-    }
   }
 }
 
 @media screen and (max-width: 840px) {
+  .container {
+    max-width: 475px;
+
+    &-bigger {
+      max-width: 455px;
+    }
+
+    &-slider {
+      max-width: 280px;
+    }
+  }
+
+  .spasing {
+    &-general {
+      margin-bottom: 70px;
+    }
+  }
+
+  .btn {
+    &-add_to_cart {
+      width: 26px;
+      height: 26px;
+    }
+  }
+
+  .name {
+    &-book {
+      width: 160px;
+      top: -20px;
+    }
+    &-author {
+      width: 160px;
+    }
+  }
+
+  .img {
+    &-books_branch {
+      width: 100%;
+    }
+
+    &-sail_books {
+      max-width: 150px;
+      max-height: 208px;
+    }
+
+    &-sail_cart {
+      font-size: 28px;
+    }
+
+    &-logo {
+      font-size: 30px;
+      margin-right: 20px;
+    }
+  }
+
+  .paragraf {
+    &-shopAll {
+      max-width: 80px;
+    }
+
+    &-rotate2023 {
+      width: 21px;
+      top: 12%;
+      left: 75%;
+      transform: translate(-25%, -88%);
+    }
+  }
+
+  .montserat {
+    font-size: 20px;
+
+    &-numbOfProduct {
+      font-size: 10px;
+    }
+
+    &-Regular_black {
+      font-size: 18px;
+    }
+
+    &-Regular_green_small {
+      font-size: 14px;
+    }
+
+    &-Regular_black_title {
+      font-size: 30px;
+    }
+
+    &-SemiBold_black_main_title {
+      font-size: 50px;
+    }
+
+    &-SemiBold_green {
+      font-size: 18px;
+    }
+
+    &-SemiBold_black {
+      font-size: 18px;
+    }
+
+    &-sail {
+      font-size: 14px;
+    }
+
+    &-footer {
+      font-size: 16px;
+    }
+
+    &-cardLi {
+      @extend .montserat;
+      font-size: 14px;
+    }
+  }
+
+  .inter {
+    font-size: 20px;
+  }
+
+  .title {
+    &-place {
+      width: 330px;
+      top: 30%;
+      left: 45%;
+      transform: translate(-55%, -70%);
+    }
+  }
+
+  .product {
+    &-columns {
+      grid-row-gap: 30px;
+      gap: 15px;
+      padding-bottom: 0;
+    }
+
+    &-container {
+      max-width: 224px;
+      height: 404px;
+      padding: 36px;
+    }
+  }
+
+  .price_blok {
+    height: 26px;
+    grid-column-gap: 90px;
+  }
+
+  .shopAll_center {
+    width: 80px;
+    margin-top: 50px;
+  }
+
+  .footer {
+    padding: 100px 0;
+
+    &-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    &-link {
+      width: 100%;
+      padding-bottom: 50px;
+      align-self: center;
+      text-align: center;
+
+      & i {
+        font-size: 60px;
+      }
+    }
+  }
+
+  .advertising_block {
+    max-height: 250px;
+
+    &-column {
+      max-height: 250px;
+
+      & > img {
+        display: none;
+      }
+
+      &:nth-child(2) {
+        height: 250px;
+        background: url(../Images/Store_images/JhonBook_Barnch.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position-x: -150px;
+      }
+    }
+
+    &-paragraph {
+      left: 53%;
+      transform: translate(-47%, -50%);
+    }
+  }
+
+  .slick {
+    &-arrow {
+      &.slick-next {
+        right: -10%;
+      }
+
+      &.slick-prev {
+        left: -10%;
+      }
+    }
+  }
 }

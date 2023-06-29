@@ -47,7 +47,7 @@ body {
   height: 836px;
 }
 .container-slider {
-  max-width: 1210px;
+  max-width: 1298px;
 }
 
 .spasing-general {
@@ -65,14 +65,19 @@ body {
   justify-content: center;
 }
 
-.book_name {
+.name-book {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
   position: absolute;
   width: 300px;
-  height: 29px;
   top: -30px;
+}
+.name-author {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 300px;
 }
 
 .tag_by_id {
@@ -503,7 +508,6 @@ body {
   cursor: pointer;
 }
 .advertising_block-column {
-  max-width: 720px;
   width: 100%;
   max-height: 402px;
   position: relative;
@@ -518,7 +522,6 @@ body {
   overflow: hidden;
 }
 .advertising_block-paragraph {
-  max-width: 442px;
   width: 100%;
   position: absolute;
   top: 50%;
@@ -799,7 +802,7 @@ body {
     transform: rotate(360deg);
   }
 }
-@media screen and (max-width: 1365px) {
+@media screen and (max-width: 1430px) {
   .container, .container-bigger, .container-first_section, .container-second_section, .container-slider {
     max-width: 990px;
   }
@@ -859,6 +862,10 @@ body {
     grid-template-rows: 1fr 1fr;
     align-items: center;
   }
+  .img-sail_books {
+    max-width: 230px;
+    max-height: 316px;
+  }
   .img-books_branch {
     height: 690px;
   }
@@ -882,10 +889,158 @@ body {
   .price_blok {
     grid-column-gap: 150px;
   }
-  .book_name {
+  .name-book {
     width: 244px;
   }
+}
+@media screen and (max-width: 840px) {
+  .container, .container-bigger, .container-first_section, .container-second_section, .container-slider {
+    max-width: 475px;
+  }
+  .container-bigger {
+    max-width: 455px;
+  }
+  .container-slider {
+    max-width: 280px;
+  }
+  .spasing-general {
+    margin-bottom: 70px;
+  }
+  .btn-add_to_cart {
+    width: 26px;
+    height: 26px;
+  }
+  .name-book {
+    width: 160px;
+    top: -20px;
+  }
+  .name-author {
+    width: 160px;
+  }
+  .img-books_branch {
+    width: 100%;
+  }
+  .img-sail_books {
+    max-width: 150px;
+    max-height: 208px;
+  }
+  .img-sail_cart {
+    font-size: 28px;
+  }
+  .img-logo {
+    font-size: 30px;
+    margin-right: 20px;
+  }
+  .paragraf-shopAll {
+    max-width: 80px;
+  }
+  .paragraf-rotate2023 {
+    width: 21px;
+    top: 12%;
+    left: 75%;
+    transform: translate(-25%, -88%);
+  }
+  .montserat, .montserat-Regular_green, .montserat-numbOfProduct, .montserat-Regular_black, .montserat-Regular_green_small, .montserat-Regular_black_title, .montserat-SemiBold_black_main_title, .montserat-SemiBold_green, .montserat-SemiBold_black, .montserat-sail, .montserat-footer, .montserat-cardLi {
+    font-size: 20px;
+  }
+  .montserat-numbOfProduct {
+    font-size: 10px;
+  }
+  .montserat-Regular_black {
+    font-size: 18px;
+  }
+  .montserat-Regular_green_small {
+    font-size: 14px;
+  }
+  .montserat-Regular_black_title {
+    font-size: 30px;
+  }
+  .montserat-SemiBold_black_main_title {
+    font-size: 50px;
+  }
+  .montserat-SemiBold_green {
+    font-size: 18px;
+  }
+  .montserat-SemiBold_black {
+    font-size: 18px;
+  }
+  .montserat-sail {
+    font-size: 14px;
+  }
+  .montserat-footer {
+    font-size: 16px;
+  }
+  .montserat-cardLi {
+    font-size: 14px;
+  }
+  .inter, .inter-Light_black, .inter-SemiBold_black {
+    font-size: 20px;
+  }
+  .title-place {
+    width: 330px;
+    top: 30%;
+    left: 45%;
+    transform: translate(-55%, -70%);
+  }
+  .product-columns {
+    grid-row-gap: 30px;
+    gap: 15px;
+    padding-bottom: 0;
+  }
+  .product-container, .product-container-ctlg {
+    max-width: 224px;
+    height: 404px;
+    padding: 36px;
+  }
+  .price_blok {
+    height: 26px;
+    grid-column-gap: 90px;
+  }
+  .shopAll_center {
+    width: 80px;
+    margin-top: 50px;
+  }
+  .footer {
+    padding: 100px 0;
+  }
+  .footer-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .footer-link {
+    width: 100%;
+    padding-bottom: 50px;
+    align-self: center;
+    text-align: center;
+  }
+  .footer-link i {
+    font-size: 60px;
+  }
+  .advertising_block {
+    max-height: 250px;
+  }
+  .advertising_block-column {
+    max-height: 250px;
+  }
+  .advertising_block-column > img {
+    display: none;
+  }
+  .advertising_block-column:nth-child(2) {
+    height: 250px;
+    background: url(../Images/Store_images/JhonBook_Barnch.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: -150px;
+  }
   .advertising_block-paragraph {
-    max-width: 400px;
+    left: 53%;
+    transform: translate(-47%, -50%);
+  }
+  .slick-arrow.slick-next {
+    right: -10%;
+  }
+  .slick-arrow.slick-prev {
+    left: -10%;
   }
 }/*# sourceMappingURL=style.css.map */
