@@ -159,7 +159,7 @@ $('.pay-button').on('click', function (event) {
 
   event.preventDefault()
 
-  if (cardNumberInput.val().length >= 16 && expiryDateInput.val().length >= 5 && cvvInput.val().length >= 4) {
+  if (cardNumberInput.val().length >= 19 && expiryDateInput.val().length >= 5 && cvvInput.val().length >= 4) {
     payButton.hide();
     payButton.after(spinnerLoader);
 

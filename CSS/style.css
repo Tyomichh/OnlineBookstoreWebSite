@@ -845,6 +845,9 @@ body {
   .img-arrow {
     display: none;
   }
+  .shopAll_center {
+    top: 0;
+  }
 }
 @media screen and (max-width: 1065px) {
   .container, .container-bigger, .container-first_section, .container-second_section, .container-slider {
@@ -916,6 +919,12 @@ body {
   }
   .name-author {
     width: 160px;
+  }
+  .menu-wrapper {
+    width: 541px;
+  }
+  .menu-listst:nth-child(1) {
+    margin-top: 300px;
   }
   .img-books_branch {
     width: 100%;
@@ -998,7 +1007,7 @@ body {
   }
   .shopAll_center {
     width: 80px;
-    margin-top: 50px;
+    top: 30px;
   }
   .footer {
     padding: 100px 0;
@@ -1042,5 +1051,133 @@ body {
   }
   .slick-arrow.slick-prev {
     left: -10%;
+  }
+}
+@media screen and (max-width: 540px) {
+  .container, .container-bigger, .container-first_section, .container-second_section, .container-slider {
+    max-width: 350px;
+  }
+  .container-bigger {
+    max-width: 340px;
+  }
+  .container-slider {
+    max-width: 200px;
+  }
+  .spasing-general {
+    margin-bottom: 50px;
+  }
+  .spasing-book_author_name {
+    margin: 20px 0 5px 0;
+  }
+  .montserat, .montserat-Regular_green, .montserat-numbOfProduct, .montserat-Regular_black, .montserat-Regular_green_small, .montserat-Regular_black_title, .montserat-SemiBold_black_main_title, .montserat-SemiBold_green, .montserat-SemiBold_black, .montserat-sail, .montserat-footer, .montserat-cardLi {
+    font-size: 18px;
+  }
+  .montserat-numbOfProduct {
+    font-size: 10px;
+  }
+  .montserat-Regular_black {
+    font-size: 14px;
+  }
+  .montserat-Regular_green_small {
+    font-size: 12px;
+  }
+  .montserat-Regular_black_title {
+    font-size: 18px;
+  }
+  .montserat-SemiBold_black_main_title {
+    font-size: 50px;
+  }
+  .montserat-SemiBold_green {
+    font-size: 14px;
+  }
+  .montserat-SemiBold_black {
+    font-size: 14px;
+  }
+  .montserat-sail {
+    font-size: 12px;
+  }
+  .montserat-footer {
+    font-size: 14px;
+  }
+  .montserat-cardLi {
+    font-size: 12px;
+  }
+  .inter, .inter-Light_black, .inter-SemiBold_black {
+    font-size: 20px;
+  }
+  .title-place {
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -75%);
+  }
+  .paragraf-rotate2023 {
+    top: 85%;
+    left: 3%;
+    transform: translate(-97%, -15%);
+  }
+  .paragraf-bottom_place {
+    width: 240px;
+    right: 30px;
+  }
+  .product-container, .product-container-ctlg {
+    max-width: 155px;
+    height: 251px;
+    padding: 28px;
+  }
+  .menu-wrapper {
+    width: 376px;
+  }
+  .menu-listst:nth-child(1) {
+    margin-top: 285px;
+  }
+  .shopping-list {
+    width: 415px;
+  }
+  .img-sail_books {
+    max-width: 99px;
+    max-height: 137px;
+  }
+  .img-logo {
+    font-size: 30px;
+    margin-right: 10px;
+  }
+  .img-main_sail_cart {
+    font-size: 28px;
+  }
+  .img-sail_cart {
+    font-size: 20px;
+  }
+  .img-books_branch {
+    height: -moz-fit-content;
+    height: fit-content;
+    position: absolute;
+    top: 20%;
+  }
+  .name-book {
+    width: 110px;
+    top: -16px;
+  }
+  .name-author {
+    width: 110px;
+  }
+  .price_blok {
+    height: 26px;
+    grid-column-gap: 47px;
+  }
+  .sail {
+    left: 30%;
+  }
+  .advertising_block-column:nth-child(2) {
+    height: 185px;
+    background-position-x: -103px;
+  }
+  .footer-link i {
+    font-size: 40px;
+  }
+  .slick-arrow.slick-next {
+    right: -20%;
+  }
+  .slick-arrow.slick-prev {
+    left: -20%;
   }
 }/*# sourceMappingURL=style.css.map */
