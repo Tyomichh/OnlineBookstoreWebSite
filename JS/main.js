@@ -17,6 +17,9 @@ $(document).on('click', e => {
 
 
 
+
+
+/*Add to Cart functions */ 
 const productContainers = Array.from(document.querySelectorAll('.productCART'));
 let products = [];
 let quantyty = document.querySelector('.shopping-quantyty');
@@ -176,9 +179,6 @@ $('.pay-button').on('click', function (event) {
   }
 });
 
-
-
-
 $(document).ready(function () {
   updateStickyPosition();
 
@@ -261,9 +261,7 @@ function filter() {
     }
   });
 }
-
 filter();
-
 function getItems(IDName) {
   items.each(function () {
     if (this.id === IDName) {
@@ -330,7 +328,7 @@ $(document).on('click', '.btn-show_less', function () {
 
 
 
-
+/*Slider*/ 
 $('.block_slider').slick({
   slidesToShow: 3,
   speed: 500,
